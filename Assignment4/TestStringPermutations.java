@@ -12,9 +12,9 @@ public class TestStringPermutations {
 		List<String> testCase1 = new ArrayList<String> (Arrays.asList("ABC", "ACB", "BAC", "BCA", "CBA", "CAB"));
 		assertEquals(testCase1, strper.generatePermutations("ABC"));
 
-		List<String> testCase2 = new ArrayList<String> (Arrays.asList("acdb", "dcab", "acbd", "bcda", "bdca", "bdac",
-				"dbca", "bacd", "cabd", "cdba", "cdab", "badc", "dabc", "cadb","dbac", 
-				"bcad", "dacb", "cbad", "cbda", "adcb", "adbc", "abdc", "abcd", "dcba"));
+		List<String> testCase2 = new ArrayList<String> (Arrays.asList("abcd", "abdc", "acbd", "acdb", "bacd", "badc", "bcad", "bcda",
+				"bdca", "bdac", "cbda", "cbad", "cdba", "cdab", "cadb", "cabd", "dcab", "dcba", "dacb", 
+				"dabc", "dbac", "dbca", "adbc","adcb"));
 		assertEquals(testCase2, strper.generatePermutations("abcd"));
 	}
 }
