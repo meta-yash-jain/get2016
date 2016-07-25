@@ -38,7 +38,7 @@ public class Questions implements Comparable<Questions> {
 	        	ques[i++] = c.split(",");
 	        }
 	        in.close();
-		}catch(Exception e)	{
+		} catch(Exception e) {
 			System.out.println(e);
 		}
 		return ques;
