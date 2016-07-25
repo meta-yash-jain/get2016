@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class SurveySorting {
-	public static void main(String ar[]) throws IOException{
+	public static void main(String args[]) throws IOException{
 		List<Questions> questions = new ArrayList<Questions>();
 		String[][] que = new Questions().ques();
 		for(int i = 0; i < que.length; i++){
