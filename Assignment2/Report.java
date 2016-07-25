@@ -17,7 +17,7 @@ public class Report {
 				temp = "Participant" + (i + 1) + temp;
 				out.write(temp);
 				out.newLine();
-				temp="";
+				temp = "";
 			}
 			out.close();
 		} catch (IOException e) {
