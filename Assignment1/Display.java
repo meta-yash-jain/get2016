@@ -1,21 +1,14 @@
 package Assignment1;
 
-import javax.swing.JTextArea;
-
-public class Display extends JTextArea{
-	
-	public Display() {
-		// Constructor
+public class Display {
+	public void resetDisplay(){
+		//set the display to zero
 	}
-	public String concat(String arg0, String arg1) {
-		//To concatenate the strings in the arguments
-		return null;
+	public void setDisplay(double result){
+		//print result in display
 	}
-	public void setText(String string) {
-		//set the given string to the text area
-	}
-	public String getText() {
-		//get the text from the text area
-		return null;
+	public String getValueFromDisplay(){
+		//to get any operations from display for 
+		//further calculations
 	}
 }
