@@ -1,18 +1,14 @@
 package Assignment1;
 
-import java.awt.LayoutManager;
-import javax.swing.JComponent;
-import javax.swing.JFrame;
-
-public class Layout extends JFrame{
-	
+public class Layout extends Buttons{
 	public Layout() {
 		//Initialize the variables
 	}
-	public void add(JComponent component) {
-		//Adding the component to the layout
+	public void setMarginBetweenButton(){
+		//set the gap between the button
 	}
-	public void setLayout(LayoutManager layout) {
-		//set the type of layout
+	public void setPositionOfButton(){
+		//set the coordinates of the button
+		//get the size and value of the button
 	}
 }
