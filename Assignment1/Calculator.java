@@ -1,26 +1,23 @@
 package Assignment1;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
-public class Calculator implements ActionListener{
+public class Calculator{
 	private Buttons[] button;
 	private Operator[] operator;
 	private Layout layout;
 	private Display display;
-	
 	public Calculator(){
-		//constructor
+		//reset the result
 	}
-	public Calculator(int digit, int operator) {
-		//initialize all the objects
+	public void setButtons(){
+		//set the values of the buttons
+		button.setValueOfButton(operator);
 	}
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		//logic for action when the buttons are clicked
+	public double calculations(){
+		//perform calculations
+		operator.getResult(operator.getOperand1,operator.getOperand2,button.getValueOfButton);
 	}
-	public Buttons[] getButton() {
-		//sending the reference for buttons 
-		return button;
+	public void printResult(){
+		//call the display function
+		display.setDisplay(result);
 	}
 }
