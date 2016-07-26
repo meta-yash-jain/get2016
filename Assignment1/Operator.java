@@ -1,24 +1,22 @@
 package Assignment1;
 
-import javax.swing.JButton;
-
-public class Operator extends JButton{
-
+public class Operator{
+	private double operand1;
+	private double opearnd2;
 	public Operator() {
-		//constructor
+		//constructor to initialize result
 	}
-	public void performOperation(){	
-		// Performs operations according to operator id
+	public double getOperand1(){
+		//return operand1
 	}
-	public int getOperatorId() {
-		// Getting the operator id
-		return 0;
+	public double getOperand2(){
+		//return operand2
 	}
-	public void setOperatorId(int operatorId) {
-		// Setting the operator id
+	public void setOperands(operand1,operand2){
+		//set the operand1 and operand2
 	}
-	public double getResult(double value1, double value2) {
+	public double getResult(double operand1, double operand2, String operator) {
 		//Perform the desired operation on the values passed as arguments
-		return 0.0;
+		return result;
 	}
 }
