@@ -31,9 +31,7 @@ public class MainMenu {
 			if(menuItem.getSize() > 0){
 				System.out.println("Press 0 to exit");
 				System.out.println("Please enter your choice in number: ");
-				// take user input for choice
 				int userInput = scanner.nextInt();
-				// to exit the program
 				if(userInput == 0){
 					return;
 				}
@@ -58,20 +56,14 @@ public class MainMenu {
 	 */
 	public Menu makeMenu(String menuName, Menu menuItem ){
 		try{
-			// variable to check if the menu is composite
 			char isComposite = '\0';
-			// variable for total choices
 			int totalChoices = 0;
 			System.out.println("Please enter total number of choices in " + menuName + " menu");
-			// taking user input
 			totalChoices = scanner.nextInt();
-			// for loop to take total choices
 			for(int i=0; i < totalChoices; ++i){
 				System.out.println("Please enter menu name ");
-				// menu name as input
 				menuName = scanner.next();
 				System.out.println("Press y or Y if menu is composite or press any key");
-				// user input for composite (Yes or No) 
 				isComposite = (char)scanner.next().charAt(0);
 				if(isComposite != 'Y' && isComposite != 'y'){
 					// not composite so LeafMenuItem is created
