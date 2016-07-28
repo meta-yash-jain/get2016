@@ -19,11 +19,17 @@ public class SocialNetwork {
 			String userInput = consoleOperations.getString("Enter name to search in network");			
 			// getting a node by user input
 			Node userNode = graph.getVertex(userInput);
-			// getting entity from node 
-			Entity entity = userNode.getEntity();			
-			System.out.println("Name: " + entity.getName());			
-			System.out.println("Contact Number: " + entity.getContactNumber());
-			System.out.println("Email ID: " + entity.getEmailID());
+			if(userNode != null){
+				// getting entity from node 
+				Entity entity = userNode.getEntity();
+				if(entity != null){
+					System.out.println("Name: " + entity.getName());			
+					System.out.println("Contact Number: " + entity.getContactNumber());
+					System.out.println("Email ID: " + entity.getEmailID());
+					}
+			} else { 
+				System.ot.println("Name does not exist");
+			}
 			userPermission = consoleOperations.getString("Do You Want to Continue ? " + "Press Y for Yes || press any key to exit").charAt(0);						
 		}while(userPermission == 'y' || userPermission == 'Y' );		
 		System.out.println("Program Ended");
