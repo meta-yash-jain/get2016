@@ -1,0 +1,6 @@
+p,yash1,2124589632,hello@gmail.com
+p,yash2,4578956466,yash2@gmail.com
+p,yash3,457856951,yash3@gmail.com
+o,metacube,4658956224,metacube@metacube.com
+o,google,5412032658,google@gmail.com
+o,microsoft,4512547895,microsoft@hotmail.com
