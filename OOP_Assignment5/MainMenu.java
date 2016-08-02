@@ -20,9 +20,7 @@ public class MainMenu {
 		System.out.println("Program Exited");
 	}
 	/**
-	 * 
 	 * @param menuItem
-	 * 
 	 * method to print menus
 	 */
 	public void printMenu(Menu menuItem){
@@ -47,11 +45,9 @@ public class MainMenu {
 		}
 	}
 	/**
-	 * 
 	 * @param menuName
 	 * @param menuItem
 	 * @return Menu
-	 * 
 	 * taking user input to set a menu
 	 */
 	public Menu makeMenu(String menuName, Menu menuItem ){
