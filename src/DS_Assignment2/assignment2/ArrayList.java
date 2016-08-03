@@ -210,7 +210,7 @@ public class ArrayList<E> {
 			int mid = low + (high - low) / 2;
 			mergeSort(low, mid, sortedArray, c);
 			mergeSort(mid+1, high, sortedArray, c);
-			merge(low, mid , high, sortedArray, c);
+			merge(low, mid, high, sortedArray, c);
 		}
 	}
 	/**
