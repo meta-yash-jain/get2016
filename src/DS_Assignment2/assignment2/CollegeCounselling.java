@@ -20,7 +20,6 @@ public class CollegeCounselling {
 			// HashMap to map the candidate to assigned college
 			Map<String,String> assignedColleges = new HashMap<String, String>();
 			assignedColleges = collegeCounselling.collegeCounsellingProcess(collegesList, candidatesQueue, totalSeats);
-			// printing the result
 			System.out.println("Assigned Colleges: ");
 			for(Map.Entry<String, String> entry : assignedColleges.entrySet()){
 				System.out.println("candidate Name: " + entry.getKey() + " , " + " assigned college: " + entry.getValue());
