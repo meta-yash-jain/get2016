@@ -112,13 +112,13 @@ public class ArrayList<E> {
 	public E getElement(int location){
 		// check if index is in range else throw IndexOutOfBounds exception
 		if(location > size-1 || location < 0){
-			throw new IndexOutOfBoundsException("location: "+location+","+"size: "+size);
+			throw new IndexOutOfBoundsException("location: " + location + "," + "size: " + size);
 		}
 		return (E)array[location];
 	}
 	public boolean overwriteElement(int location,E newValue){
 		if(location > size - 1 || location < 0){
-			throw new IndexOutOfBoundsException("location: "+location+","+"size: "+size);
+			throw new IndexOutOfBoundsException("location: " + location + "," + "size: " + size);
 		}
 		array[location] = newValue;
 		return true;
@@ -134,7 +134,7 @@ public class ArrayList<E> {
 				growCapacity(minCapacity);
 			}
 		}catch(Exception ex){
-			System.out.println("Something went wrong: "+ex.getMessage());
+			System.out.println("Something went wrong: " + ex.getMessage());
 		}
 	}
 	/**
@@ -154,7 +154,7 @@ public class ArrayList<E> {
 			int newCapacity = oldCapacity + (oldCapacity >> 1);
 			array = Arrays.copyOf(array, newCapacity);
 		}catch(Exception ex){
-			System.out.println("Something went wrong: "+ex.getMessage());
+			System.out.println("Something went wrong: " + ex.getMessage());
 		}
 	}
 	/**
@@ -193,7 +193,7 @@ public class ArrayList<E> {
 			}
 		};
 		// called merge sort to sort the array
-		mergeSort(0 , size - 1, tempArray, c);
+		mergeSort(0, size - 1, tempArray, c);
 	}
 	/**
 	 * @param low
@@ -205,12 +205,12 @@ public class ArrayList<E> {
 	 * the whole array is divided here into two parts from 0 to mid and mid+1 to size 
 	 * each array is sorted recursively each time and merged to create a complete sorted array
 	 */
-	public void mergeSort(int low , int high , Object[] sortedArray , Comparator<E> c){
+	public void mergeSort(int low, int high, Object[] sortedArray, Comparator<E> c){
 		if(low < high){
 			int mid = low + (high - low) / 2;
-			mergeSort(low , mid , sortedArray , c);
-			mergeSort(mid+1 , high , sortedArray , c);
-			merge(low , mid , high , sortedArray , c);
+			mergeSort(low, mid, sortedArray, c);
+			mergeSort(mid+1, high, sortedArray, c);
+			merge(low, mid , high, sortedArray, c);
 		}
 	}
 	/**
@@ -224,7 +224,7 @@ public class ArrayList<E> {
 	 * original array which makes original array sorted
 	 */
 	@SuppressWarnings("unchecked")
-	public void merge(int low , int mid , int high , Object[] sortedArray , Comparator<E> c){
+	public void merge(int low, int mid, int high, Object[] sortedArray, Comparator<E> c){
 		for (int i = low; i <= high; i++) {
 			sortedArray[i] = array[i];
 		}
