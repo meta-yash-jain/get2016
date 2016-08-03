@@ -13,7 +13,7 @@ public class ArrayList<E> {
 	 */
 	public ArrayList(int initialCapacity){
 		if(initialCapacity < 0){
-			throw new IllegalArgumentException("Illegal Capacity: "+initialCapacity);
+			throw new IllegalArgumentException("Illegal Capacity: " + initialCapacity);
 		}
 		this.array = new Object[initialCapacity];
 	}
@@ -26,7 +26,6 @@ public class ArrayList<E> {
 	/**
 	 * @param e
 	 * @return true if element is added
-	 * 
 	 * this method adds an element e(value) to mergedList 
 	 */
 	public boolean add(E e){
@@ -38,7 +37,6 @@ public class ArrayList<E> {
 	 * @param index
 	 * @param e
 	 * @return true if element is added 
-	 * 
 	 * this method adds the element e to a particular index 
 	 */
 	public boolean add(int index, E e){
@@ -165,7 +163,7 @@ public class ArrayList<E> {
 	 */
 	public void checkForRange(int index){
 		if(index > size && index < 0){
-			throw new ArrayIndexOutOfBoundsException("index: "+index+"size: "+size);
+			throw new ArrayIndexOutOfBoundsException("index: " + index + "size: " + size);
 		}
 	}
 	/**
@@ -174,7 +172,7 @@ public class ArrayList<E> {
 	public void reverseList(){
 		int index = 0;
 		Object[] reverseArray = new Object[size];
-		for(int i = size-1; i >=0; --i ){
+		for(int i = size-1; i >= 0; --i ){
 			reverseArray[index++] = array[i];
 		}
 		array = reverseArray;
