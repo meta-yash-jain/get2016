@@ -79,9 +79,7 @@ public class CollegeCounselling {
 					college.setCollegeSeats(numberOfSeats);
 					// overwrite the list with new object
 					collegesList.overwriteElement(userInput - 1, college);
-				}
-				// if number of seats is less than or equal to zero then display message
-				else{
+				}else{
 					System.out.println("The college you entered is already full. Please select another college");
 				}
 			}
