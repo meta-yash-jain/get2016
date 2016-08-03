@@ -134,6 +134,10 @@ public class BinaryTree<E> extends Node<E> {
 		bt.preOrder(bt.rootMirror);
 		System.out.println("Postorder of the inserted element");
 		bt.postOrder(bt.root);
-		System.out.println("two trees is " + bt.mirrorEquals(bt.root, bt.rootMirror)+" mirror");
+		if(bt.mirrorEquals(bt.root, bt.rootMirror)){
+		System.out.println("two trees is mirror image");
+		}else{
+			System.out.println("two trees is not mirror image");
+		}
 	}
 }
