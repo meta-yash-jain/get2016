@@ -80,23 +80,28 @@ public class BinaryTree<E> extends Node<E> {
 	 * This function prints the preOreder traversal 
 	 * @param pNode is the starting point from where you want to print
 	 */
-	public void preOrder(Node<E> pNode) {
+	public List<E> preOrder(Node<E> pNode) {
 		if (pNode == null)
-			return;
-		System.out.println(pNode.getElement());
+			return null;
+		
+		list.add(pNode.getElement());
 		preOrder(pNode.getLeft());
 		preOrder(pNode.getRight());
+		
+		return list;
 	}
 	/**
 	 * This function prints the postOreder traversal 
 	 * @param pNode is the starting point from where you want to print
 	 */
-	public void postOrder(Node<E> pNode) {
+	public List<E> postOrder(Node<E> pNode) {
 		if (pNode == null)
-			return;
+			return null;
 		postOrder(pNode.getLeft());
 		postOrder(pNode.getRight());
-		System.out.println(pNode.getElement());
+		list.add(pNode.getElement());
+		
+		return list;
 	}
 	/**
 	 * This function check whether the created tree is reversed or not
@@ -110,34 +115,4 @@ public class BinaryTree<E> extends Node<E> {
 		return left.getElement().toString().compareTo(right.getElement().toString()) == 0 && mirrorEquals(left.getLeft(), right.getRight()) && mirrorEquals(left.getRight(), right.getLeft());
 	}
 
-	public static void main(String[] ar) {
-		BinaryTree<Integer> bt = new BinaryTree<Integer>();
-		bt.insert(20, bt.root);
-		bt.insert(15, bt.root);
-		bt.insert(29, bt.root);
-		bt.insert(13, bt.root);
-		bt.insert(16, bt.root);
-		bt.insert(21, bt.root);
-		bt.insert(33, bt.root);
-
-		bt.insertMirror(20, bt.rootMirror);
-		bt.insertMirror(15, bt.rootMirror);
-		bt.insertMirror(29, bt.rootMirror);
-		bt.insertMirror(13, bt.rootMirror);
-		bt.insertMirror(16, bt.rootMirror);
-		bt.insertMirror(21, bt.rootMirror);
-		bt.insertMirror(33, bt.rootMirror);
-
-		System.out.println("Preorder of the inserted element of BT");
-		bt.preOrder(bt.root);
-		System.out.println("Preorder of the inserted element of MBT");
-		bt.preOrder(bt.rootMirror);
-		System.out.println("Postorder of the inserted element");
-		bt.postOrder(bt.root);
-		if(bt.mirrorEquals(bt.root, bt.rootMirror)){
-		System.out.println("two trees is mirror image");
-		}else{
-			System.out.println("two trees is not mirror image");
-		}
-	}
 }
