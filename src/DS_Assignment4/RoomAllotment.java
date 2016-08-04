@@ -12,7 +12,7 @@ public class RoomAllotment {
 	public static void main(String[] args){
 		RoomAllotment roomAllotment = new RoomAllotment();
 		try{
-			GuestHouse guestHouse = new GuestHouse("V Guest House", 97);
+			GuestHouse guestHouse = new GuestHouse("Yash Guest House", 97);
 			List<Character> roomsList = guestHouse.assignRoomNumbers();
 			char userPermission = '\0';
 			int roomsOccupied = 0;
