@@ -51,16 +51,14 @@ public class BinaryTree<E> extends Node<E> {
 			rootMirror.setElement(data);
 			rootMirror.setLeft(null);
 			rootMirror.setRight(null);
-		} else if (data.toString().compareTo(pivort.getElement().toString()) >= 0
-				&& pivort.getLeft() == null) {
+		} else if (data.toString().compareTo(pivort.getElement().toString()) >= 0 && pivort.getLeft() == null) {
 			Node<E> newnode = new Node<E>();
 			newnode.setElement(data);
 			newnode.setLeft(null);
 			newnode.setRight(null);
 			pivort.setLeft(newnode);
 			return;
-		} else if (data.toString().compareTo(pivort.getElement().toString()) < 0
-				&& pivort.getRight() == null) {
+		} else if (data.toString().compareTo(pivort.getElement().toString()) < 0 && pivort.getRight() == null) {
 			Node<E> newnode = new Node<E>();
 			newnode.setElement(data);
 			newnode.setLeft(null);
