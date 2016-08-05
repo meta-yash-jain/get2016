@@ -49,7 +49,7 @@ public class Heap<E> {
 		} else {
 			largest = index;
 		}
-		if(right < listOfJobs.size() && listOfJobs.get(right).compareTo(listOfJobs.get(index)) > 0) {
+		if(right < listOfJobs.size() && listOfJobs.get(right).compareTo(listOfJobs.get(largest)) > 0) {
 			largest = right;
 		}
 		if (largest != index) {
