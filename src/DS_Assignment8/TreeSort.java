@@ -1,7 +1,11 @@
 package DS_Assignment8;
 
+import java.util.List;
+import java.util.ArrayList;
+
 public class TreeSort<E> extends Node<E> {
 	Node<E> root; 
+	List<E> result= new ArrayList<E>();
 	public TreeSort() {
 		root = null;
 	}
@@ -47,20 +51,12 @@ public class TreeSort<E> extends Node<E> {
 		if (pNode == null)
 			return;
 		inOrder(pNode.getLeft());
-		System.out.println(pNode.getElement());
+		result.add(pNode.getElement());
 		inOrder(pNode.getRight());
 	}
 
-	public static void main(String[] ar) {
-		TreeSort<Integer> binaryTree = new TreeSort<Integer>();
-		binaryTree.insert(20, binaryTree.root);
-		binaryTree.insert(15, binaryTree.root);
-		binaryTree.insert(29, binaryTree.root);
-		binaryTree.insert(13, binaryTree.root);
-		binaryTree.insert(16, binaryTree.root);
-		binaryTree.insert(21, binaryTree.root);
-		binaryTree.insert(33, binaryTree.root);
-
-		binaryTree.inOrder(binaryTree.root);
+	public List<E> sort() {
+		inOrder(root);
+		return result;
 	}
 }
