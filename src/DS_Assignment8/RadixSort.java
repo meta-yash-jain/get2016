@@ -1,27 +1,36 @@
 package DS_Assignment8;
 
-public class RadixSort {
-	public int[] radixSort(int[] array) {
-		System.out.println("radix sort is running");
-		int i, max = array[0], divide = 1, size = array.length;
-		int[] radix = new int[10];
-		for (i = 1; i < size; i++) {
-			if (array[i] > max) {
-				max = array[i];
-			}
-		}
-		while (max / divide > 0) {
-			int[] bucket = new int[10];
+import java.util.LinkedList;
+import java.util.Queue;
 
-			for (i = 0; i < size; i++)
-				bucket[(array[i] / divide) % 10]++;
-			for (i = 1; i < 10; i++)
-				bucket[i] += bucket[i - 1];
-			for (i = size - 1; i >= 0; i--)
-				radix[--bucket[(array[i] / divide) % 10]] = array[i];
-			for (i = 0; i < size; i++)
-				array[i] = radix[i];
-			divide *= 10;
+public class RadixSort {
+	@SuppressWarnings("unchecked")
+	public int[] radixSort(int[] array) {
+		boolean flag = true;
+		int divisor = 1;
+		Queue<Integer>[] buckets = new Queue[10];
+		for (int i = 0; i < 10; i++)
+			buckets[i] = new LinkedList<Integer>();
+
+		while (flag) {
+			flag = false;
+			// first copy the values into buckets
+			for (int i = 0; i < array.length; i++) {
+				int hashIndex = (array[i] / divisor) % 10;
+				if (hashIndex > 0)
+					flag = true;
+				((LinkedList<Integer>) buckets[hashIndex]).addLast(new Integer(array[i]));
+			}
+			// then copy the values back into vector
+			divisor *= 10;
+			int i = 0;
+			for (int j = 0; j < 10; j++) {
+				while (!buckets[j].isEmpty()) {
+					Integer value = (Integer) ((LinkedList<Integer>) buckets[j]).getFirst();
+					((LinkedList<Integer>) buckets[j]).removeFirst();
+					array[i++] = value.intValue();
+				}
+			}
 		}
 		return array;
 	}
