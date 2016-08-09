@@ -4,7 +4,6 @@ import java.util.Arrays;
 
 public class CountingSort {
 	public int[] countingSort(int[] array) {
-		System.out.println("Counting sort is running");
 		int low = array[0];
 		int high = array[0];
 		for (int i = 1; i < array.length; i++) {

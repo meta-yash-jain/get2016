@@ -3,7 +3,6 @@ package DS_Assignment8;
 public class QuickSort {
 
 	int[] quickSort(int array[]) {
-		System.out.println("Quick Sort is running");
 		if (array.length == 0)
 			return array;
 		recursiveQuickSort(array, 0, array.length - 1);

@@ -5,19 +5,19 @@ import java.util.ArrayList;
 import java.util.List;
 import org.junit.Test;
 
-public class TestBinaryTree {
+public class TestTreeSort {
 	@Test
 	public void testInOrder(){
-		TreeSort<Integer> binaryTree= new TreeSort<Integer>();
+		TreeSort<Integer> treeSort= new TreeSort<Integer>();
 		List<Integer> expected= new ArrayList<Integer>();
 
-		binaryTree.insert(20, binaryTree.root);
-		binaryTree.insert(15, binaryTree.root);
-		binaryTree.insert(29, binaryTree.root);
-		binaryTree.insert(13, binaryTree.root);
-		binaryTree.insert(16, binaryTree.root);
-		binaryTree.insert(21, binaryTree.root);
-		binaryTree.insert(33, binaryTree.root);
+		treeSort.insert(20, treeSort.root);
+		treeSort.insert(15, treeSort.root);
+		treeSort.insert(29, treeSort.root);
+		treeSort.insert(13, treeSort.root);
+		treeSort.insert(16, treeSort.root);
+		treeSort.insert(21, treeSort.root);
+		treeSort.insert(33, treeSort.root);
 
 		expected.add(13);
 		expected.add(15);
@@ -27,6 +27,6 @@ public class TestBinaryTree {
 		expected.add(29);
 		expected.add(33);
 		
-		assertEquals(expected, binaryTree.sort());
+		assertEquals(expected, treeSort.sort());
 	}
 }

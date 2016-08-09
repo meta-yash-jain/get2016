@@ -10,7 +10,6 @@ public class BubbleSort {
 		int j;
 		boolean flag = true;
 		int temp;
-		System.out.println("Bubble Sort is running");
 		while (flag) {
 			flag = false; 
 			for (j = 0; j < array.length - 1; j++) {
