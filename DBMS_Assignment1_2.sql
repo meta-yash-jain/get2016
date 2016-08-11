@@ -25,9 +25,9 @@ CREATE TABLE IF NOT EXISTS Titles(
     title_nm varchar(100),
     subject_id varchar(30),
     publisher_id varchar(30),
-    FOREIGN KEY (subject_id)
+    CONSTRAINT fk_titles_subject_id FOREIGN KEY (subject_id)
         REFERENCES subjects (subject_id),
-    FOREIGN KEY (publisher_id)
+    CONSTRAINT fk_titles_publisher_id FOREIGN KEY  (publisher_id)
         REFERENCES publishers (publisher_id)
 );
 
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS Books(
     title_id varchar(30),
     price varchar(200),
     status varchar(30),
-    FOREIGN KEY (title_id)
+  CONSTRAINT fk_books_title_id FOREIGN KEY (title_id)
         REFERENCES titles (title_id)
 );
 
@@ -65,9 +65,9 @@ CREATE TABLE IF NOT EXISTS Title_author(
     title_id varchar(30),
     author_id varchar(30),
     PRIMARY KEY (`title_id`,`author_id`),
-    FOREIGN KEY (title_id)
+    CONSTRAINT fk_title_author_title_id FOREIGN KEY (title_id)
         REFERENCES titles (title_id),
-    FOREIGN KEY (author_id)
+    CONSTRAINT fk_title_author_author_id FOREIGN KEY (author_id)
         REFERENCES author (author_id)
 );
 
