@@ -56,10 +56,61 @@ INSERT INTO Title_author VALUES ('title_id_4', 'author_id_4');
 INSERT INTO Title_author VALUES ('title_id_5', 'author_id_5');
 INSERT INTO Title_author VALUES ('title_id_6', 'author_id_6');
 
-INSERT INTO Book_return VALUES ('15-08-2016', 'ace_no_1', 'mid1', '25-08-2016');
-INSERT INTO Book_return VALUES ('16-08-2016', 'ace_no_2', 'mid2', '26-08-2016');
-INSERT INTO Book_return VALUES ('17-08-2016', 'ace_no_3', 'mid3', '27-08-2016');
-INSERT INTO Book_return VALUES ('18-08-2016', 'ace_no_4', 'mid4', '28-08-2016');
-INSERT INTO Book_return VALUES ('19-08-2016', 'ace_no_5', 'mid5', '29-08-2016');
-INSERT INTO Book_return VALUES ('25-08-2016', 'ace_no_6', 'mid6', '30-08-2016');
+INSERT INTO Book_return VALUES ('15-08-2016', 'ace_no_1', 'mid1', '10-08-2016');
+INSERT INTO Book_return VALUES ('16-08-2016', 'ace_no_2', 'mid2', '11-08-2016');
+INSERT INTO Book_return VALUES ('17-08-2016', 'ace_no_3', 'mid3', '12-08-2016');
+INSERT INTO Book_return VALUES ('18-08-2016', 'ace_no_4', 'mid4', '13-08-2016');
+INSERT INTO Book_return VALUES ('19-08-2016', 'ace_no_5', 'mid5', '14-08-2016');
+INSERT INTO Book_return VALUES ('25-08-2016', 'ace_no_6', 'mid6', '15-08-2016');
 
+/* SELECT QUERIES
+SELECT * FROM members;
+SELECT * FROM author;
+SELECT * FROM book_issue;
+SELECT * FROM books;
+SELECT * FROM publishers;
+SELECT * FROM subjects;
+SELECT * FROM title_author;
+SELECT * FROM titles;
+SELECT * FROM book_return;
+*/
+
+UPDATE members SET addressline2 = 'Jaipur';
+UPDATE members SET addressline1 = 'EPIP, Sitapura' WHERE category = 'F';
+
+ALTER TABLE titles DROP FOREIGN KEY fk_titles_publisher_id;
+
+DELETE FROM publishers;
+
+/* Inserting the data back to the publisher table using substitution variables */
+
+SET @id = 'pub_id_1';
+SET @name = 'publisher1';
+INSERT INTO publishers VALUES ( @id, @name );
+
+SET @id = 'pub_id_2';
+SET @name = 'publisher2';
+INSERT INTO publishers VALUES ( @id, @name );
+
+SET @id = 'pub_id_3';
+SET @name = 'publisher3';
+INSERT INTO publishers VALUES ( @id, @name );
+
+SET @id = 'pub_id_4';
+SET @name = 'publisher4';
+INSERT INTO publishers VALUES ( @id, @name );
+
+SET @id = 'pub_id_5';
+SET @name = 'publisher5';
+INSERT INTO publishers VALUES ( @id, @name );
+
+SET @id = 'pub_id_6';
+SET @name = 'publisher6';
+INSERT INTO publishers VALUES ( @id, @name );
+
+ALTER TABLE Title_author DROP FOREIGN KEY fk_title_author_title_id;
+ALTER TABLE books DROP FOREIGN KEY fk_books_title_id ;
+
+ALTER TABLE titles ADD CONSTRAINT fk_titles_publisher_id FOREIGN KEY (publisher_id) REFERENCES publishers(publisher_id);
+
+DELETE FROM titles WHERE publisher_id = 'pub_id_1';
