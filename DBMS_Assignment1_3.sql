@@ -76,6 +76,7 @@ SELECT * FROM book_return;
 */
 
 UPDATE members SET addressline2 = 'Jaipur';
+
 UPDATE members SET addressline1 = 'EPIP, Sitapura' WHERE category = 'F';
 
 ALTER TABLE titles DROP FOREIGN KEY fk_titles_publisher_id;
@@ -109,6 +110,7 @@ SET @name = 'publisher6';
 INSERT INTO publishers VALUES ( @id, @name );
 
 ALTER TABLE Title_author DROP FOREIGN KEY fk_title_author_title_id;
+
 ALTER TABLE books DROP FOREIGN KEY fk_books_title_id ;
 
 ALTER TABLE titles ADD CONSTRAINT fk_titles_publisher_id FOREIGN KEY (publisher_id) REFERENCES publishers(publisher_id);
