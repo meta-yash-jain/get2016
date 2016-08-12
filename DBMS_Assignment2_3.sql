@@ -3,7 +3,6 @@ CREATE DATABASE ECommerce;
 USE ECommerce;
 
 CREATE TABLE Product(
-
 	product_category_id CHAR(36) NOT NULL,
 	category_name VARCHAR(100) NOT NULL,
 	parent_category_id CHAR(36),
