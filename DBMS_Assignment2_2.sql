@@ -1,6 +1,5 @@
 USE Library_Information_System;
 
-
 SELECT b.issue_dt, b.accession_no, b.member_id, m.member_nm, 
 IFNULL(return_dt, 'Book Not Returned') as Return_Date  
 FROM book_return b
