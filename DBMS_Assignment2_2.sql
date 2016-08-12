@@ -5,4 +5,4 @@ IFNULL(return_dt, 'Book Not Returned') as Return_Date
 FROM book_return b
 LEFT JOIN Members m
 ON b.member_id = m.member_id
-ORDER BY issue_dt DESC, member_nm DESC;
+ORDER BY issue_dt, member_nm;
