@@ -41,7 +41,7 @@ INSERT INTO Country_City VALUES ('Nagpur', '1000000', 'Maharashtra', '442432');
 INSERT INTO Country_City VALUES ('Pune', '2000000', 'Maharashtra', '442451');
 INSERT INTO Country_City VALUES ('Jaipur', '5000000', 'Rajasthan', '342489');
 INSERT INTO Country_City VALUES ('Jodhpur', '500000', 'Rajasthan', '342463');
-INSERT INTO Country_City VALUES ('Ajmer', '6000000', 'Rajasthan',' 342477');
+INSERT INTO Country_City VALUES ('Ajmer', '6000000', 'Rajasthan', '342477');
 
 Select z.zipcode, c.city_name, c.state_name
 FROM Country_Zipcode z
