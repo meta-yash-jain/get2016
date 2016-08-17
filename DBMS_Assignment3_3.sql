@@ -1,5 +1,5 @@
 
-SELECT GROUP_CONCAT(DISTINCT m.category), GROUP_CONCAT(m.member_count) FROM (SELECT category, count(*) AS member_count FROM members GROUP BY category) AS m;
+SELECT GROUP_CONCAT(DISTINCT m.category) AS Categories, GROUP_CONCAT(m.member_count) AS No_Of_Categories FROM (SELECT category, count(*) AS member_count FROM members GROUP BY category) AS m;
 
 SELECT bi.accession_no, b.title_id, t.title_nm FROM Book_issue bi
 INNER JOIN Books b ON b.accession_no = bi.accession_no
