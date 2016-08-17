@@ -1,11 +1,11 @@
 USE Library_Information_System;
 
-INSERT INTO Members VALUES ('mid1', 'yash', 'addresss1', 'address2', 'category1');
-INSERT INTO Members VALUES ('mid2', 'yash', 'addresss1', 'address2', 'category2');
-INSERT INTO Members VALUES ('mid3', 'yash', 'addresss1', 'address2', 'category3');
-INSERT INTO Members VALUES ('mid4', 'yash', 'addresss1', 'address2', 'category4');
-INSERT INTO Members VALUES ('mid5', 'yash', 'addresss1', 'address2', 'category5');
-INSERT INTO Members VALUES ('mid6', 'yash', 'addresss1', 'address2', 'category6');
+INSERT INTO Members VALUES ('mid1', 'yash', 'addresss1', 'address2', 'M');
+INSERT INTO Members VALUES ('mid2', 'menu', 'addresss1', 'address2', 'F');
+INSERT INTO Members VALUES ('mid3', 'riya', 'addresss1', 'address2', 'F');
+INSERT INTO Members VALUES ('mid4', 'Jon Snow', 'addresss1', 'address2', 'O');
+INSERT INTO Members VALUES ('mid5', 'Keshav Sharma', 'addresss1', 'address2', 'M');
+INSERT INTO Members VALUES ('mid6', 'shweta', 'addresss1', 'address2', 'F');
 
 INSERT INTO Subjects VALUES ('sub_id_1', 'DBMS');
 INSERT INTO Subjects VALUES ('sub_id_2', 'DAA');
@@ -30,7 +30,7 @@ INSERT INTO Titles VALUES ('title_id_6', 'title6', 'sub_id_6', 'pub_id_6');
 
 INSERT INTO Books VALUES ('22-04-2016', 'ace_no_1', 'title_id_1', '100','Booked');
 INSERT INTO Books VALUES ('25-04-2016', 'ace_no_2', 'title_id_2', '200','Booked');
-INSERT INTO Books VALUES ('22-05-2016', 'ace_no_3', 'title_id_3', '300','Booked');
+INSERT INTO Books VALUES ('22-05-2016', 'ace_no_3', 'title_id_3', '300','');
 INSERT INTO Books VALUES ('21-06-2016', 'ace_no_4', 'title_id_4', '400','Booked');
 INSERT INTO Books VALUES ('22-07-2016', 'ace_no_5', 'title_id_5', '500','Booked');
 INSERT INTO Books VALUES ('29-09-2016', 'ace_no_6', 'title_id_6', '600','Booked');
@@ -63,6 +63,8 @@ INSERT INTO Book_return VALUES ('18-08-2016', 'ace_no_4', 'mid4', '13-08-2016');
 INSERT INTO Book_return VALUES ('19-08-2016', 'ace_no_5', 'mid5', '14-08-2016');
 INSERT INTO Book_return VALUES ('25-08-2016', 'ace_no_6', 'mid6', '15-08-2016');
 
+SELECT * FROM books;
+
 /* SELECT QUERIES
 SELECT * FROM members;
 SELECT * FROM author;
@@ -74,9 +76,9 @@ SELECT * FROM title_author;
 SELECT * FROM titles;
 SELECT * FROM book_return;
 */
+SELECT * FROM book_return;
 
 UPDATE members SET addressline2 = 'Jaipur';
-
 UPDATE members SET addressline1 = 'EPIP, Sitapura' WHERE category = 'F';
 
 ALTER TABLE titles DROP FOREIGN KEY fk_titles_publisher_id;
@@ -110,7 +112,6 @@ SET @name = 'publisher6';
 INSERT INTO publishers VALUES ( @id, @name );
 
 ALTER TABLE Title_author DROP FOREIGN KEY fk_title_author_title_id;
-
 ALTER TABLE books DROP FOREIGN KEY fk_books_title_id ;
 
 ALTER TABLE titles ADD CONSTRAINT fk_titles_publisher_id FOREIGN KEY (publisher_id) REFERENCES publishers(publisher_id);
