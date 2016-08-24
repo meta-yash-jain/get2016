@@ -4,6 +4,7 @@ package assignment_2;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import assignment_1.Book;
 
 //Data Access Object class for book
 //contains all queries related to books issued
