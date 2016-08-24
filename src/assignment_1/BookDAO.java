@@ -25,7 +25,7 @@ public class BookDAO {
 	 * @return List of books on query
 	 */
 	public List<Book> selectBooks(Author author){
-		String sqlQuery = "SELECT t.title_nm FROM Authors a "
+		String sqlQuery = "SELECT t.title_nm FROM Author a "
 				+ "INNER JOIN title_author ta ON ta.author_id = a.author_id "
 				+ "INNER JOIN Titles t ON t.title_id = ta.title_id "
 				+ "WHERE a.author_nm = ?";
