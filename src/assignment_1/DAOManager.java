@@ -21,7 +21,7 @@ public class DAOManager {
 	public Connection getConnection() throws SQLException, ClassNotFoundException {
 
 		String driverClass = "com.mysql.jdbc.Driver";
-		String url = "jdbc:mysql://localhost:3306/library";
+		String url = "jdbc:mysql://localhost:3306/Library_Information_System";
 		String username = "root";
 		String password = "yash123";
 		Class.forName(driverClass);
