@@ -1,0 +1,124 @@
+body {
+    background:#E5E1D6;
+}
+
+#wrapper {
+    margin: auto;
+	width:700px;
+	background:#FFF;
+ }
+
+#header {
+    background:#AED1ED;
+    height:85px;
+    text-align:center;
+    padding-top:10px;
+    font-weight:bold;
+}
+
+.myheader {
+    background:rgba(79, 167, 231,0.16);
+    height:30px;
+    text-align:left;
+    padding:30px 10px 10px 10px;
+	margin:10px;
+	color:#0066FF;
+	top:10px;
+	border:#0066FF 1px solid;
+}
+
+table{
+	margin-left:0px;
+}
+
+tr.cellSpace > td{
+	padding-bottom:1em;
+}
+
+#nav {
+	background:#9BB2B8;
+	text-align:left;
+	height:30px;
+}
+
+#nav ul {
+      list-style:none;
+	  padding:0px;
+	  margin:0px;
+}
+
+#nav ul li {
+	display:inline;
+	padding:5px;
+	margin:5px 5px;
+	position:relative;
+	top:6px;
+}
+
+#nav ul li a {
+	color:#FFF;
+	text-decoration:none;
+}
+
+#nav ul li :hover {
+	color:#FFF;
+	text-decoration:none;
+	background:#0033FF;
+	padding:5px;
+	border:1px solid #009;
+}
+
+#container {
+	background:#FFF;
+	margin:5px;
+	height:250px;
+}
+
+.leftNav{
+	width:150px;
+	height:550px;
+	float:left;
+}
+
+#subleftNav {
+	width:150px;
+	margin-top:10px;
+}
+
+#subleftNav ul {
+	list-style:none;
+	margin:0;
+	padding:3px;
+	border:1px solid #666;
+	border-radius:3px;
+}
+
+#subleftNav ul li {
+	margin:5px 0;
+	padding-left:10px;
+}
+
+#subleftNav ul li.menuHead {
+	font-weight:bold;
+	background:#cce6fc;
+	text-align:left;
+	height:25px;
+	padding-top:5px;
+	padding-left:5px;
+	border:1px solid #999;
+	border-radius:5px;
+}
+
+#inner {
+   width:365px;
+   position:relative;
+   float:left;
+   margin:10px;
+}
+
+#footer {
+	clear:both;
+     background:#c0bcb1;
+	text-align:center;
+	padding:10px;
+} 
