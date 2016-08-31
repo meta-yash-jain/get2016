@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css"></head>
+<body>
+    <header>
+        Contact Us Today!
+    </header>
+    <section>
+        <div class="listOfName">
+            <ul>
+                <li>First Name</li>
+                <li>Last Name</li>
+                <li>E-Mail</li>
+                <li>Phone #</li>
+                <li>Address</li>
+                <li>City</li>
+                <li>State</li>
+                <li>Zip Code</li>
+                <li>Website or Domain name</li>
+                <li>Do you have hosting ?</li>
+                <li>Project Description</li>
+            </ul>
+        </div>
+        <div class="listOfTags">
+        <form action="" method="post">
+            <ul>
+                <li>
+                    <span class="inputIcon fa fa-user"></span>
+                    <input type="text" name="fname" placeholder="First Name" required pattern="[A-Za-z]{1,10}"/>
+                </li>
+                <li>
+                    <span class="inputIcon fa fa-user"></span>
+                    <input type="text" name="lname" placeholder="Last Name" required pattern="[A-Za-z]{1,10}"/>
+                </li>
+                <li>
+                    <span class="inputIcon fa fa-envelope"></span>
+                    <input type="email" name="email" placeholder="E-Mail Address" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" />
+                </li>
+                <li>
+                    <span class="inputIcon fa fa-phone"></span>
+                    <input type="text" name="phone" placeholder="(845)555-1212" required pattern="[0-9]{1,10}"/>
+                </li>
+                <li>
+                    <span class="inputIcon fa fa-home"></span>
+                    <input type="text" name="address" placeholder="Address" required pattern="[A-Za-z]{1,100}"/>
+                </li>
+                <li>
+                    <span class="inputIcon fa fa-home"></span>
+                    <input type="text" name="city" placeholder="City" required pattern="[A-Za-z]{1,10}"/>
+                </li>
+                <li>
+                    <span class="inputIcon fa fa-bars"></span>
+                    <select name="state" required pattern="[A-Za-z]{1,10}">
+                        <option>Please select your state</option>
+                        <option>Rajasthan</option>
+                        <option>Gujarat</option>
+                        <option>Madhya Pradesh</option>
+                        <option>Maharashtra</option>
+                    </select>
+                </li>
+                <li>
+                    <span class="inputIcon fa fa-home"></span>
+                    <input type="text" name="zipcode" placeholder="Zip Code" required pattern="[0-9]{3}"/>
+                </li>
+                <li>
+                    <span class="inputIcon fa fa-globe"></span>
+                    <input type="text" name="domainName" placeholder="Website or Domain name" required pattern="[A-Za-z]{1,10}"/>
+                </li>
+                <li>
+                    <input type="radio" name="hosting" required/>Yes<br/>
+                    <input type="radio" name="hosting" />No
+                </li>
+                <li>
+                    <span class="inputIcon fa fa-pencil"></span>
+                    <textarea placeholder="Project Description" required pattern="[A-Za-z]{1,200}"></textarea>
+                </li>
+                <li>
+                    <button type="submit">Send <i class="fa fa-paper-plane-o"></i></button>
+                </li>
+            </ul>
+         </form>
+        </div>
+    </section>
+</body>
+</html>

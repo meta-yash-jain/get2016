@@ -1,0 +1,105 @@
+header{
+    padding: 3%;
+    color: #393537;
+    font-weight: 600;
+}
+
+ul{
+    margin: 0px;
+    padding: 0px;
+}
+
+ul li{
+    padding: 2%;
+    list-style: none;
+    /*border: solid 1px red;*/
+    clear: both;
+}
+
+.listOfName{
+    width: 30%;
+    float: left;
+    text-align: right;
+}
+
+.listOfName ul li{
+    padding-top: 16px;
+}
+
+.listOfTags{
+    width: 40%;
+    float: left;
+}
+
+.inputIcon {
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    color: #555;
+    text-align: center;
+    width: 2%;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 4px 0px 0px 4px;
+    float: left;
+}
+
+.listOfTags ul li:nth-child(11) .inputIcon{
+    padding: 10px 12px;
+}
+
+.listOfTags ul li:nth-child(10){
+    padding-bottom: 0px;
+}
+
+.listOfTags ul li input[type="text"], input[type="email"]{
+    height: 26px;
+    float: left;
+    padding-left: 5px;
+    border: solid 1px #ccc;
+    border-radius: 0px 4px 4px 0px;
+}
+
+.listOfTags ul li select{
+    height: 30px;
+    float: left;
+    padding-left: 5px;
+    color: #555;
+    width: 29%;
+    border: solid 1px #ccc;
+    border-radius: 0px 4px 4px 0px;
+}
+
+.listOfTags ul li textarea{
+    height: 32px;
+    float: left;
+    padding-left: 5px;
+    color: #555;
+    width: 28%;
+    border: solid 1px #ccc;
+    border-radius: 0px 4px 4px 0px;
+}
+
+.listOfName ul li:nth-child(last){
+    padding-top: 10px;
+}
+
+button{
+    padding: 1%;
+    background: #ec9632;
+    color: white;
+    border: solid 1px #ec9632;
+    border-radius: 5%;
+}
+
+input:focus{
+    outline-color: #cccccc;
+}
+
+textarea:focus{
+    outline-color: #cccccc;
+    color: #fcb03c;
+}
+input:focus:required:invalid {border: 1px solid red;}
+textarea:focus:required:invalid {border: 1px solid red;}
