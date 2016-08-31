@@ -29,7 +29,7 @@
 .header{
     width: auto;
     background: #2D3E50;
-    padding: 15px 30px 30px 30px;
+    padding: 15px 0px 30px 0px;
     color: white;
     border: solid 1px black;
     text-align: right;
@@ -98,7 +98,7 @@ li a:hover{
     width: auto;
     text-align: center;
     height: 20%;
-    padding: 1% 0px;
+    padding: 2% 0px;
     color: rgba(6, 7, 24, 0.65);
 }
 
@@ -111,6 +111,7 @@ li a:hover{
 
 .innerSection2 span{
     color:#008eff;
+    line-height: 2.5;
 }
 
 .section3{
@@ -122,7 +123,7 @@ li a:hover{
 
 .divFold {
     position: relative;
-    padding: 40px 40px 35px 26px;
+    padding: 40px 45px 35px 26px;
     width:0px;
     height: 20px;
     background-color: #f3c631;
@@ -184,7 +185,7 @@ li a:hover{
 .section4{
     width: auto;
     height:45%;
-    padding: 2%;
+    padding: 3%;
 }
 
 .section4 label{
@@ -195,8 +196,9 @@ li a:hover{
     width: 30%;
     text-align: left;
     font-weight: bold;
-    margin-top: 3%;
+    margin-top: 4%;
     float: left;
+    color: #425569;
 }
 
 .innerForm input[type="text"]{
@@ -206,6 +208,7 @@ li a:hover{
     margin-top: 1%;
     border-radius: 6px;
     padding-left: 2%;
+    border: 1px solid #dddddd;
 }
 
 .innerForm input[type="button"]{
@@ -215,13 +218,14 @@ li a:hover{
     color: white;
     border-radius: 6px;
     background:#318dd6;
+    border: 1px solid #318dd6;
 }
 
 .innerInfo{
     float: left;
     width: 60%;
     text-align: left;
-    margin-top: 3%;
+    margin-top: 4%;
     margin-left: 9%;
     color: #8a9697;
 }
@@ -229,6 +233,7 @@ li a:hover{
 .innerInfo label{
     font-weight: bold;
     color: #34495e;
+    line-height: 2;
 }
 
 .footer{
