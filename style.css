@@ -1,10 +1,11 @@
 body {
     background:#E5E1D6;
+	font-family: 'Open Sans', sans-serif;
 }
 
 #wrapper {
     margin: auto;
-	width:700px;
+	width:885px;
 	background:#FFF;
 	padding-top:1px;
  }
@@ -23,7 +24,6 @@ body {
     text-align:left;
     padding:30px 10px 10px 10px;
 	margin:10px;
-	color:#0066FF;
 	top:10px;
 	border:#0066FF 1px solid;
 }
@@ -39,7 +39,7 @@ tr.cellSpace > td{
 #nav {
 	background:#9BB2B8;
 	text-align:left;
-	height:30px;
+	height:4.5%;
 }
 
 #nav ul {
@@ -76,13 +76,15 @@ tr.cellSpace > td{
 }
 
 .leftNav{
-	width:150px;
+	width:230px;
 	height:550px;
 	float:left;
+	margin-left: 15px;
+	margin-bottom: 10px;
 }
 
 #subleftNav {
-	width:150px;
+	width:216px;
 	margin-top:10px;
 }
 
@@ -101,13 +103,15 @@ tr.cellSpace > td{
 
 #subleftNav ul li.menuHead {
 	font-weight:bold;
-	background:#cce6fc;
+	background:#e2e7ea;
 	text-align:left;
 	height:25px;
 	padding-top:5px;
 	padding-left:5px;
 	border:1px solid #999;
 	border-radius:5px;
+	margin-top: 0px;
+	padding-bottom: 5px;
 }
 
 #inner {
@@ -122,4 +126,19 @@ tr.cellSpace > td{
      background:#c0bcb1;
 	text-align:center;
 	padding:10px;
-} 
+}
+
+#subleftNav ul li input[type="button"]{
+	padding: 4%;
+	border-radius: 5px;
+	border: solid 1px #9db0b6;
+	background: #9db0b6;
+}
+
+#subleftNav ul li:nth-child(2){
+	margin-bottom: 0px;
+}
+
+#subleftNav ul li:nth-child(3){
+	margin-top: 0px;
+}
