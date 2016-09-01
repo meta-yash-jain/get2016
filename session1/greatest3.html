@@ -1,0 +1,30 @@
+<html>
+<head>
+    <title>Greatest among 3 Numbers</title>
+</head>
+<script>
+    function greatest() {
+       var a = parseInt(document.getElementById("no1").value);
+       var b = parseInt(document.getElementById('no2').value);
+       var c = parseInt(document.getElementById('no3').value);
+        var result;
+        if (a > b && a > c) {
+            result = a;
+        } else {
+            if (b > a && b > c) {
+                result = b;
+            } else {
+                result = c;
+            }
+        }
+        document.getElementById('resul').placeholder = result;
+    }
+</script>
+<body>
+    Enter 1st Number <input type="text" id="no1" value="" /><br/>
+    Enter 2nd Number <input type="text" id="no2" value="" /><br/>
+    Enter 3rd Number <input type="text" id="no3" value="" /><br/>
+    <input type="button" onclick="greatest();" value="Submit" /><br/>
+    Result <input type="text" id="resul" placeholder="" disabled />
+</body>
+</html>

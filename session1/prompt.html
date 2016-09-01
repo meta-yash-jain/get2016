@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to demonstrate the prompt box.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+    function myFunction() {
+        var num = prompt("Please enter number");
+        if (num != null) {
+            document.getElementById("demo").innerHTML = "Sum is : " + (parseInt(num) + 10) + " Concatenate is:  " + (num+10);
+        }
+    }
+</script>
+
+</body>
+</html>
+
