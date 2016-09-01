@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Local Storage</title>
+</head>
+<body>
+
+<div id="result"></div>
+
+<script>
+    if (typeof(Storage) !== "undefined") {
+        document.write("<h1>Count On Each Refresh</h1>")
+        if(localStorage.getItem("count")!=null){
+            var value= Number(localStorage.getItem("count"));
+            document.getElementById("result").innerHTML = value+1 ;
+            localStorage.setItem("count", value+1);
+        }else{
+            localStorage.setItem("count", 1);
+            document.getElementById("result").innerHTML = 0 ;
+        }
+    } else {
+        document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+    }
+</script>
+
+</body>
+</html>
+
