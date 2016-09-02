@@ -1,0 +1,24 @@
+<html>
+<head>
+    <title>Pyramid</title>
+</head>
+<script>
+    function pyramid(a) {
+        for (i = 0; i < a; i++) {
+            for (j = 0; j < a - i; j++) {
+                document.write("&nbsp;");
+            }
+            for ( k = 0; k <= i; k++) {
+                document.write("* ");
+            }
+            document.write("<br/>");
+        }
+
+    }
+</script>
+<body>
+Enter Number <input type="text" id="no1" value="" /><br/>
+<input type="button" onclick="pyramid(parseInt(document.getElementById('no1').value));" value="Submit" /><br/>
+</body>
+</html>
+

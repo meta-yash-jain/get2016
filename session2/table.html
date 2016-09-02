@@ -1,0 +1,18 @@
+<html>
+<head>
+    <title>Mathematical Table</title>
+</head>
+<script>
+    function table(num) {
+        for (i = 1; i <= 10; i++) {
+            document.write(num + " * " + i + " = " + (num*i) );
+            document.write("<br/>");
+        }
+    }
+</script>
+<body>
+Enter Number <input type="text" id="no1" value="" /><br/>
+<input type="button" onclick="table(parseInt(document.getElementById('no1').value));" value="Submit" /><br/>
+</body>
+</html>
+
