@@ -1,0 +1,146 @@
+body {
+    background:#E5E1D6;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 13px;
+}
+
+#wrapper {
+    margin: auto;
+	width:885px;
+	background:#FFF;
+	padding-top:1px;
+ }
+
+#header {
+    background:#AED1ED;
+    height:85px;
+    text-align:center;
+    padding-top:10px;
+    font-weight:bold;
+}
+
+.myheader {
+    background:rgba(79, 167, 231,0.16);
+    height:30px;
+    text-align:left;
+    padding:30px 10px 10px 10px;
+	margin:10px;
+	top:10px;
+	border:#0066FF 1px solid;
+}
+
+table{
+	margin-left:0px;
+}
+
+tr.cellSpace > td{
+	padding-bottom:1em;
+}
+
+#nav {
+	background:#9BB2B8;
+	text-align:left;
+	height:4.5%;
+}
+
+#nav ul {
+      list-style:none;
+	  padding:0px;
+	  margin:0px;
+}
+
+#nav ul li {
+	display:inline;
+	padding:5px;
+	padding-bottom: 8px;
+	margin:5px 5px;
+	position:relative;
+	top:8px;
+}
+
+#nav ul li a {
+	color:#FFF;
+	text-decoration:none;
+}
+
+#nav ul li :hover {
+	color:#FFF;
+	text-decoration:none;
+	background: rgba(115, 181, 226, 1);
+	padding:5px;
+	border:1px solid rgba(54, 111, 188, 1);
+}
+
+#container {
+	background:#FFF;
+	margin:5px;
+	height:250px;
+}
+
+.leftNav{
+	width:230px;
+	height:480px;
+	float:left;
+	margin-left: 15px;
+	margin-bottom: 10px;
+}
+
+#subleftNav {
+	width:216px;
+	margin-top:10px;
+}
+
+#subleftNav ul {
+	list-style:none;
+	margin:0;
+	padding:3px;
+	border:1px solid rgba(226, 227, 226, 0.55);
+	border-radius:6px;
+}
+
+#subleftNav ul li {
+	margin:5px 0;
+	padding-left:10px;
+}
+
+#subleftNav ul li.menuHead {
+	font-weight:bold;
+	background:#e2e7ea;
+	text-align:left;
+	height:25px;
+	padding-top:5px;
+	padding-left:5px;
+	border:1px solid #999;
+	border-radius:5px;
+	margin-top: 0px;
+	padding-bottom: 5px;
+}
+
+#inner {
+   width:365px;
+   position:relative;
+   float:left;
+   margin:10px;
+}
+
+#footer {
+	clear:both;
+     background:#c0bcb1;
+	text-align:center;
+	padding:10px;
+}
+
+#subleftNav ul li input[type="button"]{
+	padding: 4%;
+	border-radius: 5px;
+	border: solid 1px #9db0b6;
+	background: #9db0b6;
+}
+
+#subleftNav ul li:nth-child(2){
+	margin-bottom: 0px;
+}
+
+#subleftNav ul li:nth-child(3){
+	margin-top: 0px;
+}
