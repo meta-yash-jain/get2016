@@ -10,44 +10,47 @@
         var d = parseInt(document.getElementById('no4').value);
         var result;
         var array = new Array(4);
-        if(a>b)
-        { if(a>c)
-            { if(a>d)
-                { result = a;
-                }else{
-                    result = d;
-                }
-            }
-        }
-        else if(b>c) {
-            if(b>d) { 
-                result = b;
-            }else {
-                result = d;
-            }
-        }
-        else if(c>d){
-            result = c;
+
+        if (isNaN(a) || a < 1 || a > 10 || isNaN(b) || b < 1 || b > 10 || isNaN(c) || c < 1 || c > 10 || isNaN(d) || d < 1 || d > 10 )  {
+            alert("Input not valid");
         } else {
-            result = d;
-        }
-
-        array[0]=a;
-        array[1]=b;
-        array[2]=c;
-        array[3]=d;
-
-        for(;result > 0;result--){
-            for(i=0;i<4;i++) {
-                if (result - array[i] > 0) {
-                    document.write("&nbsp;&nbsp;&nbsp;&nbsp;");
-                } else {
-                    document.write("*&nbsp;&nbsp;");
-                }
+            if(a>b)
+            { if(a>c)
+            { if(a>d)
+            { result = a;}
+            else
+            { result = d;}
             }
-            document.write("<br/>");
+            } else if(b>c)
+            {
+                if(b>d)
+                { result = b;}
+                else
+                { result = d;}
+            }
+            else if(c>d)
+            { result = c;}
+            else
+            { result = d;}
+
+            array[0]=a;
+            array[1]=b;
+            array[2]=c;
+            array[3]=d;
+
+            for(;result > 0;result--){
+                for(i=0;i<4;i++) {
+                    if (result - array[i] > 0) {
+                        document.write("&nbsp;&nbsp;&nbsp;&nbsp;");
+                    } else {
+                        document.write("*&nbsp;&nbsp;");
+                    }
+                }
+                document.write("<br/>");
+            }
+            document.write("A B C D");
         }
-        document.write("A B C D");
+
     }
 </script>
 <body>
@@ -56,5 +59,6 @@ Enter 2nd Number <input type="text" id="no2" value="" /><br/>
 Enter 3rd Number <input type="text" id="no3" value="" /><br/>
 Enter 4th Number <input type="text" id="no4" value="" /><br/>
 <input type="button" onclick="chart();" value="Submit" /><br/>
+Result <input type="text" id="resul" placeholder="" disabled />
 </body>
 </html>
