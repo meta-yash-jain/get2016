@@ -5,16 +5,20 @@
 <script>
     function greatest(a, b, c) {
         var result;
-        if (a > b && a > c) {
-            result = a;
+        if (isNaN(a) || a < 1 || a > 10 || isNaN(b) || b < 1 || b > 10 || isNaN(c) || c < 1 || c > 10)  {
+            alert("Input not valid");
         } else {
-            if (b > a && b > c) {
-                result = b;
+            if (a > b && a > c) {
+                result = a;
             } else {
-                result = c;
+                if (b > a && b > c) {
+                    result = b;
+                } else {
+                    result = c;
+                }
             }
+            document.getElementById('ans').placeholder = result;
         }
-        document.getElementById('ans').placeholder = result;
     }
 </script>
 <body>
