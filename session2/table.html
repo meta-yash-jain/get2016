@@ -4,9 +4,13 @@
 </head>
 <script>
     function table(num) {
-        for (i = 1; i <= 10; i++) {
-            document.write(num + " * " + i + " = " + (num*i) );
-            document.write("<br/>");
+        if (isNaN(num) || num < 1 || num > 10 )  {
+            alert("Input not valid");
+        } else {
+            for (i = 1; i <= 10; i++) {
+                document.write(num + " * " + i + " = " + (num*i) );
+                document.write("<br/>");
+            }
         }
     }
 </script>
