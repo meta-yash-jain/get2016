@@ -4,16 +4,19 @@
 </head>
 <script>
     function pyramid(a) {
-        for (i = 0; i < a; i++) {
-            for (j = 0; j < a - i; j++) {
-                document.write("&nbsp;");
+        if (isNaN(a) || a < 1 || a > 10 )  {
+            alert("Input not valid");
+        } else {
+            for (i = 0; i < a; i++) {
+                for (j = 0; j < a - i; j++) {
+                    document.write("&nbsp;");
+                }
+                for ( k = 0; k <= i; k++) {
+                    document.write("* ");
+                }
+                document.write("<br/>");
             }
-            for ( k = 0; k <= i; k++) {
-                document.write("* ");
-            }
-            document.write("<br/>");
         }
-
     }
 </script>
 <body>
