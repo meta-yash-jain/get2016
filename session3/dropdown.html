@@ -1,0 +1,34 @@
+<html>
+<head>
+    <title>Dropdown Example</title>
+</head>
+<script>
+    function dropdown() {
+        if(document.getElementById('radio1').checked==true){
+            alert(document.getElementById('drop1').value);
+        }
+        if(document.getElementById('radio2').checked==true){
+            alert(document.getElementById('drop2').value);
+        }
+    }
+</script>
+<body>
+Dropdown Field 1<br/>
+<select id="drop1">
+    <option value="1">Dropdown Field 1</option>
+    <option value="2" >ABC</option>
+    <option value="3">XYZ</option>
+</select><br/><br/>
+Dropdown Field 2<br/>
+<select id="drop2">
+    <option value="4">Dropdown Field 2</option>
+    <option value="5">ABC</option>
+    <option value="6">XYZ</option>
+</select><br/><br/>
+Radio 1<br/>
+<input type="radio" name="radio1" id="radio1" onchange="dropdown();" />Radio 1<br/>
+Radio 2<br/>
+<input type="radio" name="radio1" id="radio2" onchange="dropdown();" />Radio 2
+
+</body>
+</html>

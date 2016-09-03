@@ -1,0 +1,31 @@
+<html>
+<head>
+    <title>Radio Example</title>
+</head>
+<script>
+    function generate() {
+        if(document.getElementById('radio1').checked==true && document.getElementById('radio3').checked==true){
+            alert("Radio 1 and Radio 3");
+        }
+        if(document.getElementById('radio1').checked==true && document.getElementById('radio4').checked==true){
+            alert("Radio 1 and Radio 4");
+        }
+        if(document.getElementById('radio2').checked==true && document.getElementById('radio3').checked==true){
+            alert("Radio 2 and Radio 3");
+        }
+        if(document.getElementById('radio2').checked==true && document.getElementById('radio4').checked==true){
+            alert("Radio 2 and Radio 4");
+        }
+    }
+</script>
+<body>
+Radio Group 1<br/>
+<input type="radio" name="radio1" id="radio1" value="Radio 1" />Radio 1<br/>
+<input type="radio" name="radio1" id="radio2" value="Radio 2" />Radio 2<br/><br/>
+Radio Group 2<br/>
+<input type="radio" name="radio2" id="radio3" value="Radio 3" />Radio 3<br/>
+<input type="radio" name="radio2" id="radio4" value="Radio 4" />Radio 4<br/><br/>
+
+<input type="button" value="generate Combinations" onclick="generate();" />
+</body>
+</html>
