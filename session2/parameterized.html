@@ -1,0 +1,31 @@
+<html>
+<head>
+    <title>Greatest among 3 Numbersby Parameterized Function</title>
+</head>
+<script>
+    function greatest(a, b, c) {
+        var result;
+        if (isNaN(a) || a < 1 || a > 10 || isNaN(b) || b < 1 || b > 10 || isNaN(c) || c < 1 || c > 10)  {
+            alert("Input not valid");
+        } else {
+            if (a > b && a > c) {
+                result = a;
+            } else {
+                if (b > a && b > c) {
+                    result = b;
+                } else {
+                    result = c;
+                }
+            }
+            document.getElementById('ans').placeholder = result;
+        }
+    }
+</script>
+<body>
+Enter 1st Number <input type="text" id="no1" value="" /><br/>
+Enter 2nd Number <input type="text" id="no2" value="" /><br/>
+Enter 3rd Number <input type="text" id="no3" value="" /><br/>
+<input type="button" onclick="greatest(parseInt(document.getElementById('no1').value), parseInt(document.getElementById('no2').value), parseInt(document.getElementById('no3').value));" value="Submit" /><br/>
+Result <input type="text" id="ans" placeholder="" disabled />
+</body>
+</html>
