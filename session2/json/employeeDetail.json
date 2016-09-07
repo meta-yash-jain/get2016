@@ -1,0 +1,22 @@
+{
+    "abcd" : {
+        "name" : "ABCD",
+        "email" : "abcd@example.com",
+        "dob" : "14/02/1990",
+        "address" : "Shastri Nagar"
+    },
+    
+    "lmno" : {
+        "name" : "LMNO",
+        "email" : "lmno@example.com",
+        "dob" : "11/10/1986",
+        "address" : "Laxmi Ratan Nagar"
+    },
+    
+    "xyz" : {
+        "name" : "XYZ",
+        "email" : "xy.z@example.com",
+        "dob" : "25/12/1995",
+        "address" : "Frontier Colony"
+    }
+}
