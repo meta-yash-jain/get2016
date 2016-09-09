@@ -3,6 +3,10 @@ $(document).ready(function(){
         $("#box").animate({left: '+=250px'},3000,'linear');
     });
 
+    $('#right').click(function () {
+        $("#box").animate({left: '+=50px'},3000,'linear');
+    });
+
     $('#stop').click(function () {
         $("#box").stop();
     });
@@ -11,12 +15,16 @@ $(document).ready(function(){
         $("#box").animate({left: '-=250px'},3000,'linear');
     });
 
+    $('#left').click(function () {
+        $("#box").animate({left: '-=50px'},3000,'linear');
+    });
+
     $('#top').click(function () {
-        $("#box").animate({top: '-=250px'},3000,'linear');
+        $("#box").animate({top: '-=50px'},3000,'linear');
     });
 
     $('#bottom').click(function () {
-        $("#box").animate({top: '+=250px'},3000,'linear');
+        $("#box").animate({top: '+=50px'},3000,'linear');
     });
 
 });
