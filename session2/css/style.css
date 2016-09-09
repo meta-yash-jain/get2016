@@ -1,0 +1,70 @@
+
+#myDiv{
+	
+	margin-top : 0%;
+	border-color : black;
+	border-style : solid;
+	border-width : 2px;
+	background-color : orange;
+	text-align : center;
+	float : left;
+	padding-top : 5%;
+	padding-left : 5%;
+	padding-bottom : 5%;
+	padding-right : 5%;
+	font-size : 20px;
+	width : 30%;
+	height : 120px;
+}
+
+.buttons{
+	clear : both;
+	padding-top : 5%;
+}
+
+.clear{
+    clear:both;
+}
+
+#box {
+    position : absolute;
+    margin:200px;
+    background-color: red;
+    border : 1px solid black;
+    height: 100px;
+    width: 100px;
+}
+
+#main{
+    margin: 0px auto;
+    width: 500px;
+    height: 50%;
+    margin-top: 100px;
+    text-align: center;
+}
+
+#result{
+    margin: 0px auto;
+    width: 300px;
+    height: 200px;
+    margin-top: 50px;
+    border: black solid 1px;
+}
+table {
+    margin: 10px;
+    display: none;
+    text-align: left;
+    border: 1px solid;
+    width: auto;
+}
+
+tr {
+    width: 100%;
+}
+
+.error {
+    color: red;
+    display: none;
+}
+
+
