@@ -1,4 +1,331 @@
+.clear{
+    clear: both;
+}
+
 .borderDiv{
-    border: 1px solid grey;
+    background-color: #c36464;
+    color: #ffffff;
+}
+
+.borderRadius{
+    border-radius: 0px;
+}
+
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover{
+    background-color: #c36464;
+}
+
+nav{
+    border: none !important;
+}
+
+.navbar-inverse .navbar-nav>li>a{
+    color: white;
+}
+
+.dashboard{
+    font-size: large;
+    color: #c36464;
+    padding-bottom: 20px;
+}
+
+.hrline {
+    padding-top: 10px;
+    border-bottom: 2px solid #c36464;
+}
+
+.message{
+    background-color: #dff0d8;
+    color: #55793d;
+    border-radius: 4px;
+    padding: 20px 15px 20px 15px;
+}
+
+.button{
+    background-color: #f0677c;
+    z-index: 1;
+}
+
+.hamburger{
+    background-color: #ffffff;
+}
+
+.card {
+    background-color: #b9b739;
+    color: #ffffff;
+    border-radius: 5px;
     text-align: center;
+    height: 170px;
+    line-height: 55px;
+    padding: 0px 10px 0px 10px;
+    margin: 10px 10px 0px 0px;
+    margin-right: 0px;
+}
+
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 12px;
+    line-height: 1.428571429;
+    border-radius: 15px;
+    background-color: rgba(240, 103, 124, 1);
+    border: none;
+    color: white;
+    margin: 20px 0px 20px 0px;
+}
+.btn-circle.btn-lg {
+    width: 50px;
+    height: 50px;
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.33;
+    border-radius: 25px;
+}
+
+
+.btn-circle.btn-xl {
+    width: 70px;
+    height: 70px;
+    padding: 10px 16px;
+    font-size: 24px;
+    line-height: 1.33;
+    border-radius: 35px;
+    background-color:rgba(185, 183, 57, 1);
+    border: 1px solid white;
+}
+
+.tempHr{
+    margin-top: 6px;
+    margin-bottom: 0;
+    border: 0;
+    border-top: 1px solid #eee;
+}
+
+.photocolr{
+    background-color: rgba(240, 73, 73, 1) !important;
+}
+
+.favcolor{
+    background-color: rgba(17, 156, 126, 1) !important;
+}
+
+.announcecolor{
+    background-color: rgba(183, 57, 185, 1) !important;
+}
+
+.border{
+    border: solid 1px red;
+}
+
+.btn {
+    padding: 6px 5px;
+    border-radius: 0px;
+}
+
+.btn:focus, .btn:active:focus, .btn.active:focus {
+    outline: 0 none;
+}
+
+.btn-primary {
+    background: #0099cc;
+    color: #ffffff;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+    background: #33a6cc;
+}
+
+.btn-primary:active, .btn-primary.active {
+    background: #007299;
+    box-shadow: none;
+}
+
+.btn.sharp {
+    border-radius:0;
+    font-size: 10px;
+    float: right;
+}
+
+.leftPanel{
+    margin-top: 40px;
+    color: #424f64;
+}
+
+.panelHead{
+    padding: 10px;
+    background-color: rgba(245, 245, 245, 1);
+    margin-bottom: 20px;
+    border-bottom: solid 1px #e5e5e5 ;
+}
+
+.panelBody{
+    margin: 10px 20px;
+    padding-bottom: 10px;
+    border-bottom: solid 1px #e5e5e5;
+}
+
+.btn.sharped {
+    border-radius:0px;
+    font-size: 15px;
+    color: #3c763d;
+}
+
+.infocolor{
+    color: #a94442 !important;
+}
+
+.commentcolor{
+    color: #8a6d3b !important;
+}
+
+.label{
+    padding: 6px;
+    border-radius: 0px;
+}
+
+.footer{
+    height: auto;
+    padding: 10px 0px;
+    margin-top: 25px;
+    background-color: rgba(245, 245, 245, 1);
+    border-top: solid 1px #e5e5e5 ;
+}
+
+.padbutton{
+    width: 95%;
+    margin: 0px 15px;
+}
+
+.panelBorder{
+    border: solid 1px #e5e5e5 ;
+    border-radius: 4px;
+}
+
+.hrmargin{
+    margin: 0px;
+}
+
+.social{
+    background-color: #fcf8e3;
+    padding: 20px 10%;
+    border-radius: 4px;
+    width: 100%;
+    border: solid 1px #faebcc;
+}
+
+.facbtn{
+    background-color: #6279a7;
+    margin-right: 5px;
+    margin-top: 5px;
+    color: white;
+}
+
+.googlebtn{
+    background-color: #cf573a;
+    margin-right: 5px;
+    margin-top: 5px;
+    color: white;
+}
+
+.twitterbtn{
+    background-color: #33bbeb;
+    margin-top: 5px;
+    margin-right: 5px;
+    color: white;
+}
+
+.linkbtn{
+    background-color: #3e90b4;
+    margin-top: 5px;
+    margin-right: 5px;
+    color: white;
+}
+
+.tablelabel{
+    padding: 4px;
+    border-radius: 2px;
+    font-size: x-small;
+    color: white;
+}
+
+.rightpanel{
+    margin-top: 40px;
+}
+
+.panelmessage{
+    background-color: #f2dede;
+    color: #a95272;
+    border: solid 1px #ebccd1;
+    padding: 20px 10px;
+    border-radius: 4px;
+}
+
+.formpanel{
+    border: solid 1px #d6e9c6 ;
+    border-radius: 4px;
+    margin-bottom: 50px;
+}
+
+.rightpanelHead{
+    padding: 20px 10px;
+    background-color:#dff0d8;
+    margin-bottom: 20px;
+    color: #3c7955;
+    border-bottom: solid 1px #e5e5e5 ;
+}
+
+.padform{
+    margin: 14px;
+}
+
+.formbutton{
+    padding: 14px;
+}
+
+.hrmarginpanel{
+    margin: 0px;
+    margin: 0px 14px;
+}
+
+.buttonpad{
+    padding: 10px;
+}
+
+.rightpanelFooter{
+    padding: 15px 10px;
+    background-color: rgba(245, 245, 245, 1);
+    border-top: solid 1px #e5e5e5 ;
+}
+
+.modcolor{
+    background-color: rgba(184, 183, 57, 1);
+    color: white;
+}
+
+.closebutton{
+    padding: 6px 5px;
+    color: black;
+    margin: 0px;
+    font-size: 20px;
+    background-color: white !important;
+    z-index: 1;
+    position: relative;
+    top: -15px;
+    left: 14px;
+}
+
+.modaltop{
+    top: 150px;
+}
+
+.footerpad{
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
+    .dashboard{
+        padding-top: 15px;
+    }
 }
