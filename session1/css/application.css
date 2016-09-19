@@ -328,6 +328,7 @@ nav{
     color: black;
     text-align: left;
     width: auto;
+    text-shadow: none;
     padding-left: 18px;
     padding-right: 18px;
 }
