@@ -2,10 +2,10 @@
 <head>
     <title>Bootstrap</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" >
-    <script src="js/jquery-3.1.0.min.js"></script>
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="css/application.css" rel="stylesheet" type="text/css" />
     <link href="css/demo.css" rel="stylesheet" type="text/css" />
+
 </head>
 <body>
 
@@ -57,7 +57,7 @@
     <div class="row">
         <div class="col-md-3 col-sm-3">
             <div class="card">
-                <button type="button" class="btn btn-default btn-circle btn-xl"><i class="glyphicon glyphicon-bell"></i></button>
+                <button type="button" class="btn btn-default btn-circle btn-xl" data-toggle="modal" data-target="#myModal" ><i class="glyphicon glyphicon-bell"></i></button>
                 <hr class="tempHr">
                 Notifications
             </div>
@@ -115,7 +115,7 @@
                             <label class="label-success label">Lets! have it</label>
                         </div>
                         <div class="footer text-center">
-                            <button type="button" class="btn btn-default btn-block padbutton" data-toggle="modal" data-target="#myModal" ><i class="glyphicon glyphicon-refresh"></i> Just a small footer button</button>
+                            <button type="button" class="btn btn-default btn-block padbutton"><i class="glyphicon glyphicon-refresh"></i> Just a small footer button</button>
                         </div>
                     </div>
                     <br/>
@@ -241,13 +241,15 @@
 
 <!--Pop Over -->
 
-<div class="modal fade modaltop" id="myModal" role="dialog">
+<div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog modal-md">
         <button type="button" class=" btn-default btn-circle btn-sm close closebutton" data-dismiss="modal">&times;</button>
         <div class="modal-content">
             <div class="modal-header modcolor">
                 <h4 class="modal-title">Notifications</h4>
             </div>
+
+            <div id="carousel-example-generic" class="carousel slide">
             <div class="modal-body main-container">
 
                 <div class="carousel-inner" role="listbox">
@@ -255,58 +257,126 @@
                     <!-- First slide -->
                     <div class="item active ">
 
-                        <div class="carousel-caption">
+                        <div class="carousel-caption notifibody">
                             <div class="panelBody">
                                 <button type="button" class="btn btn-default btn-lg sharped"><i class="glyphicon glyphicon-align-left"></i></button>
                                 This is simple admin template that can be used
-                                <label class="label-warning label">Just Now</label>
+                                <label class="label-warning label"><a class="anchor" data-toggle="tooltip" data-placement="right" title="Tool Tip">Just Now</a></label>
                             </div>
                             <div class="panelBody">
                                 <button type="button" class="btn btn-default btn-lg sharped infocolor"><i class="glyphicon glyphicon-info-sign"></i></button>
                                 This is simple admin template that can be used
-                                <label class="label-info label">2 min chat</label>
+                                <label class="label-info label"><a class="anchor" data-toggle="tooltip" data-placement="right" title="Tool Tip!">2 min chat</a></label>
                             </div>
                             <div class="panelBody">
                                 <button type="button" class="btn btn-default btn-lg sharped commentcolor"><i class="glyphicon glyphicon-comment"></i></button>
                                 This is simple admin template that can be used
-                                <label class="label-success label">GO!</label>
+                                <label class="label-success label"><a class="anchor" data-toggle="tooltip" data-placement="right" title="Tool Tip!">GO!</a></label>
                             </div>
                             <div class="panelBody">
                                 <button type="button" class="btn btn-default btn-lg sharped infocolor"><i class="glyphicon glyphicon-edit"></i></button>
                                 This is simple admin template that can be used
-                                <label class="label-success label">Lets! have it</label>
+                                <label class="label-success label"><a class="anchor" data-toggle="tooltip" data-placement="right" title="Tool Tip!">Lets! have it</a></label>
                             </div>
                         </div>
                     </div> <!-- /.item -->
 
                     <!-- Second slide -->
-                    <div class="item skyblue">
-                        <div class="carousel-caption">
-                            <h3 class="icon-container" data-animation="animated bounceInDown">
-                                <span class="glyphicon glyphicon-heart"></span>
-                            </h3>
-                            <h3 data-animation="animated bounceInUp">
-                                This is the caption for slide 2
-                            </h3>
-                            <button class="btn btn-primary btn-lg" data-animation="animated zoomInRight">Button</button>
+                    <div class="item">
+                        <div class="carousel-caption notifibody">
+                            <div class="panel-group" id="accordion" role="tablist">
+
+                                <!--1st Collapsible Panel-->
+                                <div class="panel panel-default accordProfile">
+                                    <div class="panel-heading" role="tab" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                        <h4>Collapse Item #1
+                                            <div class="pull-right text-center">
+                                                <span class="glyphicon glyphicon-plus"></span>
+                                            </div>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel">
+                                        <div class="panel-body">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ex ligula, laoreet vel turpis in, imperdiet volutpat libero. Duis in egestas mi, a auctor elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam bibendum hendrerit turpis, at congue sem ornare venenatis. Fusce a ipsum eget ex pharetra tincidunt. Nam hendrerit lectus ac mollis hendrerit. Nullam ut nunc sed nunc aliquam venenatis nec id elit.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--2nd Collapsible Item-->
+                                <div class="panel panel-default accordProfile">
+                                    <div class="panel-heading" role="tab" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                        <h4>Collapse Item #2
+                                            <div class="pull-right text-center">
+                                                <span class="glyphicon glyphicon-plus"></span>
+                                            </div>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel">
+                                        <div class="panel-body">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ex ligula, laoreet vel turpis in, imperdiet volutpat libero. Duis in egestas mi, a auctor elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam bibendum hendrerit turpis, at congue sem ornare venenatis. Fusce a ipsum eget ex pharetra tincidunt. Nam hendrerit lectus ac mollis hendrerit. Nullam ut nunc sed nunc aliquam venenatis nec id elit.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--3rd Collapsible Item-->
+                                <div class="panel panel-default accordProfile">
+                                    <div class="panel-heading" role="tab" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                                        <h4>Collapse Item #3
+                                            <div class="pull-right text-center">
+                                                <span class="glyphicon glyphicon-plus"></span>
+                                            </div>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel">
+                                        <div class="panel-body">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ex ligula, laoreet vel turpis in, imperdiet volutpat libero. Duis in egestas mi, a auctor elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam bibendum hendrerit turpis, at congue sem ornare venenatis. Fusce a ipsum eget ex pharetra tincidunt. Nam hendrerit lectus ac mollis hendrerit. Nullam ut nunc sed nunc aliquam venenatis nec id elit.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div><!-- /.item -->
 
                     <!-- Third slide -->
-                    <div class="item darkerskyblue">
-                        <div class="carousel-caption">
-                            <h3 class="icon-container" data-animation="animated zoomInLeft">
-                                <span class="glyphicon glyphicon-glass"></span>
-                            </h3>
-                            <h3 data-animation="animated flipInX">
-                                This is the caption for slide 3
-                            </h3>
-                            <button class="btn btn-primary btn-lg" data-animation="animated lightSpeedIn">Button</button>
+                    <div class="item">
+                        <div class="carousel-caption notifibody">
+
+                            <ul id="myTab" class="nav nav-tabs">
+                                <li class="active"><a href="#ad" data-toggle="tab">
+                                    Academic Details</a>
+                                </li>
+                                <li><a href="#pd" data-toggle="tab">Personal Details</a></li>
+                                <li><a href="#plde" data-toggle="tab">Planned Deployment</a></li>
+                            </ul>
+                            <div id="myTabContent" class="tab-content" >
+                                <div class="tab-pane fade in active text-center" id="ad">
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                </div>
+
+                                <div class="tab-pane fade text-center" id="pd">
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                </div>
+
+                                <div class="tab-pane fade text-center" id="plde">
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                </div>
+
+                            </div>
+
                         </div>
                     </div><!-- /.item -->
 
                 </div><!-- /.carousel-inner -->
 
+                <!-- Controls -->
+                <a class="left carousel-control leftslider" href="#carousel-example-generic" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left arrowcolor" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control leftslider" href="#carousel-example-generic" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right arrowcolor" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
             </div>
             <div class="modal-footer footerpad">
                 <ol class="carousel-indicators">
@@ -315,10 +385,12 @@
                     <li data-target="#carousel-example-generic" data-slide-to="2"></li>
                 </ol>
             </div>
+                </div>
         </div>
     </div>
 </div>
-
+<script src="js/jquery-3.1.0.min.js"></script>
 <script src="js/bootstrap.js"></script>
+<script src="js/application.js"></script>
 </body>
 </html>
