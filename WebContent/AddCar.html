@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title> Welcome to Car Becho </title>
+		<link rel='stylesheet' type='text/css' href='site.index.css'>
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+		<link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+	</head>
+	
+	<body>
+		<div id='contact'>
+			<h2> Add Car </h2>
+		</div>
+		<div>
+			<form action="AddCarServlet" method="GET">
+				<div>
+					<label> Company Name </label>
+					<input type='text' name='car_company_name' value="" placeholder='Company Name' required/>
+				</div>
+				<div>
+					<label> Model Number  </label>
+					<input type='text' name='car_model_number' value="" placeholder='Model Number' required/>
+				</div>
+				<div>
+					<label> Name </label>
+					<input type='text' name='car_name' value="" placeholder='Name' required/>
+				</div>
+				<div>
+					<label> Fuel Capacity (in Litres) </label>
+					<input type='number' name='car_fuel_capacity' value="" placeholder='Fuel Capacity' required/>
+				</div>
+				<div>
+					<label> Milage  </label>
+					<input type='number'  name='car_milage' value="" placeholder='Milage' required/>
+				</div>
+				<div>
+					<label> Price </label>
+					<input type='text' name='car_price' value="" placeholder='Price' required/>
+				</div>
+				<div>
+					<label> Road Tax </label>
+					<input type='text' name='car_road_tax' value="" placeholder='Road Tax'  required/>
+				</div>
+				<div>
+					<label> Does car have AC ? </label>
+					<input type='radio' name='AC' value='Yes' required/> <span id='radiotext' > Yes </span> &nbsp; &nbsp;
+					<input type='radio' name='AC' value='No'/> <span id='radiotext'> No </span>
+				</div>
+				<div>
+					<label> Does car have power steering ? </label>
+					<input type='radio' name='powerSteering' value='Yes' required/> <span id='radiotext' > Yes </span> &nbsp; &nbsp;
+					<input type='radio' name='powerSteering' value='No'/> <span id='radiotext'> No </span>
+				</div> 
+				<div>
+					<label> Does car have accessory kit ? </label>
+					<input type='radio' name='accessoryKit' value='Yes' required/> <span id='radiotext' > Yes </span> &nbsp; &nbsp;
+					<input type='radio' name='accessoryKit' value='No'/> <span id='radiotext'> No </span>
+				</div>
+				<div>
+					<button type='submit'> <h4 id='buttontext'>  Send  <i class="fa fa-paper-plane" aria-hidden="true"></i> </h4>  </button>
+				</div>
+			</form>
+			<div>
+				<a href="Index.html"> Home </a>
+			</div>
+		</div>
+	</body>
+</html>
