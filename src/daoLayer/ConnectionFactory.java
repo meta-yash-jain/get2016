@@ -9,12 +9,11 @@ import java.util.Properties;
 // singleton class for DAO Manager 
 // this class establishes connection through properties class
 public class ConnectionFactory {
-	private Connection connection;
-	private Properties properties;
+	private static Connection connection;
+	private static Properties properties;
 
 	private ConnectionFactory(){
 		connection = null;
-		properties = null;
 	}
 
 	/**
@@ -25,12 +24,17 @@ public class ConnectionFactory {
 	public Properties loadPropertiesFile(){
 		InputStream inputStream =  null;
 		try{
-			inputStream = this.getClass().getClassLoader().getResourceAsStream("jdbc.properties");
-			if(inputStream != null){
-				properties = new Properties();
-				properties.load(inputStream);
+			if(properties == null){
+				System.out.println("dbms properties load");
+				inputStream = this.getClass().getClassLoader().getResourceAsStream("jdbc.properties");
+				if(inputStream != null){
+					properties = new Properties();
+					properties.load(inputStream);
+				}else{
+					System.out.println("input stream is null");
+				}
 			}else{
-				System.out.println("input stream is null");
+				return properties;
 			}
 		}catch(Exception ex){
 			System.out.println("Something went wrong: " + ex.getLocalizedMessage());
