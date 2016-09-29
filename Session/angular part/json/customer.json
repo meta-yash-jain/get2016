@@ -1,0 +1,110 @@
+[
+    {
+        "id": "101",
+        "imageUrl": "male.jpg",
+        "firstName": "Joe",
+        "lastName":"Doe",
+        "numberOfOrders":15,
+        "city":"Jaipur",
+        "state":"Rajasthan"
+    },
+    {
+        "id": "102",
+        "imageUrl": "female.jpg",
+        "firstName": "aditi",
+        "lastName":"pande",
+        "numberOfOrders":10,
+        "city":"Mathura",
+        "state":"U.P."
+    },
+    {
+        "id": "103",
+        "imageUrl": "male.jpg",
+        "firstName": "Ajinkya",
+        "lastName":"Pande",
+        "numberOfOrders":12,
+        "city":"Mathura",
+        "state":"U.P."
+    },
+    {
+        "id": "104",
+        "imageUrl": "male.jpg",
+        "firstName": "Nikhil",
+        "lastName":"Srivastav",
+        "numberOfOrders":11,
+        "city":"Lacknow",
+        "state":"U.P."
+    },
+    {
+        "id": "105",
+        "imageUrl": "male.jpg",
+        "firstName": "Vaibhav",
+        "lastName":"Zambad",
+        "numberOfOrders":12,
+        "city":"Chandrapur",
+        "state":"Maharastra"
+    },
+    {
+        "id": "106",
+        "imageUrl": "female.jpg",
+        "firstName": "simran",
+        "lastName":"kapoor",
+        "numberOfOrders":12,
+        "city":"alwar",
+        "state":"Rajasthan"
+    },
+    {
+        "id": "107",
+        "imageUrl": "male.jpg",
+        "firstName": "Ajinkya",
+        "lastName":"Pande",
+        "numberOfOrders":12,
+        "city":"Mathura",
+        "state":"U.P."
+    },
+    {
+        "id": "108",
+        "imageUrl": "male.jpg",
+        "firstName": "Ajinkya",
+        "lastName":"Pande",
+        "numberOfOrders":12,
+        "city":"Mathura",
+        "state":"U.P."
+    },
+    {
+        "id": "107",
+        "imageUrl": "male.jpg",
+        "firstName": "Ajinkya",
+        "lastName":"Pande",
+        "numberOfOrders":12,
+        "city":"Mathura",
+        "state":"U.P."
+    },
+    {
+        "id": "108",
+        "imageUrl": "male.jpg",
+        "firstName": "Ajinkya",
+        "lastName":"Pande",
+        "numberOfOrders":12,
+        "city":"Mathura",
+        "state":"U.P."
+    },
+    {
+        "id": "107",
+        "imageUrl": "male.jpg",
+        "firstName": "Ajinkya",
+        "lastName":"Pande",
+        "numberOfOrders":12,
+        "city":"Mathura",
+        "state":"U.P."
+    },
+    {
+        "id": "108",
+        "imageUrl": "male.jpg",
+        "firstName": "Ajinkya",
+        "lastName":"Pande",
+        "numberOfOrders":12,
+        "city":"Mathura",
+        "state":"U.P."
+    }
+]

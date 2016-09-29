@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html ng-app="MyApp">
+<head>
+  <meta charset="utf-8">
+  <title>My HTML App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+  <link rel="stylesheet" href="css/app.css" charset="utf-8">
+</head>
+<body ng-controller="customerListControl">
+  <div class="container-fluid">
+    <div class="container">
+      <h1>Customers</h1>
+      <div class="row">
+        <div class="col-sm-7">
+          <div class="navbar">
+            <ul class="nav navbar-nav">
+              <li ng-click="changeView($event)"><a id="grid"><span class="glyphicon glyphicon-th-large"></span> Grid View</a></li>
+              <li ng-click="changeView($event)"><a id="list"><span class="glyphicon glyphicon-th-list"></span> List View</a></li>
+              <li data-target="#addModal" data-toggle="modal"><a><span class="glyphicon glyphicon-plus"></span> Add Customer</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-5 width_adjust">
+          <div class="form-inline">
+            <div class="form-group navbar-right">
+              <label for="filter" class="form-control-label">Filter :</label> <input type='text' class='form-control' id="filterText" ng-model="filterbox.firstName">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="{{changeViewClass}}" ng-repeat="customer in customers.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage)) | filter : filterbox">
+          <button class="close" ng-click="deleteDetails($index)">&times;</button>
+          <div class="panel panel-primary" ng-click="editDetails($index)"  data-toggle="modal" data-target="#editModal">
+            <div class="panel-heading">
+              <span class="label">{{customer.firstName+' '+customer.lastName}}</span>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-xs-6">
+                  <img class="profile_img" src="img/male.jpg" alt="male" />
+                </div>
+                <div class="col-xs-6">
+                  <p>{{customer.address}}</p>
+                  <p class="light-blue-text">{{customer.numberOfOrdes}} Orders</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <ul uib-pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" num-pages="numPages"></ul>
+      </div>
+      <!--Modal -->
+      <div id="editModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Edit Customer</h4>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <form>
+                  <div class="form-group">
+                    <div class="col-xs-4">
+                      <label class="control-label"> First Name : </label>
+                    </div>
+                    <div class="col-xs-8">
+                      <input type="text" class="form-control" name="customerFirstName" ng-model="editedItem.firstName"/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-xs-4">
+                      <label class="control-label"> Last Name : </label>
+                    </div>
+                    <div class="col-xs-8">
+                      <input type="text" class="form-control" name="customerLastName" ng-model="editedItem.lastName"/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-xs-4">
+                      <label class="control-label"> Email : </label>
+                    </div>
+                    <div class="col-xs-8">
+                      <input type="text" class="form-control" name="customerEmail" ng-model="editedItem.email"/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-xs-4">
+                      <label class="control-label"> Address : </label>
+                    </div>
+                    <div class="col-xs-8">
+                      <input type="text" class="form-control" name="customerAddress" ng-model="editedItem.address"/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-xs-4">
+                      <label class="control-label"> Number of Orders : </label>
+                    </div>
+                    <div class="col-xs-8">
+                      <input type="text" class="form-control" name="customerOrders" ng-model="editedItem.numberOfOrdes"/>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" ng-click="updateDetails()" data-dismiss="modal">Update</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Modal -->
+      <div id="addModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Add Customer</h4>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <form>
+                  <div class="form-group">
+                    <div class="col-xs-4">
+                      <label class="control-label"> First Name : </label>
+                    </div>
+                    <div class="col-xs-8">
+                      <input type="text" class="form-control" name="customerFirstName" value="{{customer.firstName}}"/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-xs-4">
+                      <label class="control-label"> Last Name : </label>
+                    </div>
+                    <div class="col-xs-8">
+                      <input type="text" class="form-control" name="customerLastName" value="{{customer.lastName}}"/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-xs-4">
+                      <label class="control-label"> Email : </label>
+                    </div>
+                    <div class="col-xs-8">
+                      <input type="text" class="form-control" name="customerEmail" value="{{customer.email}}"/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-xs-4">
+                      <label class="control-label"> Address : </label>
+                    </div>
+                    <div class="col-xs-8">
+                      <input type="text" class="form-control" name="customerAddress" value="{{customer.address}}"/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-xs-4">
+                      <label class="control-label"> Number of Orders : </label>
+                    </div>
+                    <div class="col-xs-8">
+                      <input type="number" class="form-control" name="customerOrders" value="{{customer.numberOfOrdes}}"/>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Add</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js"></script>
+  <script src="js/ui-bootstrap-tpls-2.1.4.min.js" charset="utf-8"></script>
+  <script src="js/app.js" charset="utf-8"></script>
+</body>
+</html>
