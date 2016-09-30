@@ -3,11 +3,16 @@ var myApp = angular.module("MyApp",['ui.bootstrap']);
 myApp.controller('customerListControl', ['$scope', '$http', function ($scope, $http) {
   $http.get('http://localhost:8080/Rest-Angular/customers/customers').success(function(data) {
     $scope.customers = data.Employee;
+    angular.forEach($scope.customers , function(value,key){
+      $scope.customers[key].fullName =  value.firstName + " " + value.lastName;
+    //  console.log(key + " " + $scope.customers[key].fullName);
+    });
     $scope.totalItems = $scope.customers.length;
     console.log($scope.numPages);
   }).error(function() {
     console.log("error");
   });
+
   $scope.editedItem = {};
   $scope.currentPage = 1;
   $scope.itemsPerPage = 12;
