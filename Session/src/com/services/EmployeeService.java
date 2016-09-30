@@ -26,15 +26,15 @@ public class EmployeeService {
 	 * It create and update the employee both if id is provided then it update
 	 * else it create an employee
 	 * 
-	 * @param emVo It is employee value object which store all the data
+	 * @param employeeVo It is employee value object which store all the data
 	 * @return Response status code
 	 * @throws SQLException
 	 */
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response addEmployee(EmployeeVO emVo) throws SQLException {
+	public Response addEmployee(EmployeeVO employeeVo) throws SQLException {
 		EmployeeFacade employeeFacade = new EmployeeFacade();
-		boolean result = employeeFacade.save(emVo);
+		boolean result = employeeFacade.save(employeeVo);
 		if (result)
 			return Response.status(200).build();
 		else
