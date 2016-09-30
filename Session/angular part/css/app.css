@@ -1,0 +1,22 @@
+.light-blue-text{
+  color:#5f54f1;
+}
+
+@media (min-width: 768px){
+.col-sm-5.width_adjust{
+  width: 40.4%;
+}
+}
+
+button.close{
+  color: white;
+  opacity: 1;
+}
+
+img.profile_img{
+  padding-bottom: 20px;
+}
+
+button.close{
+padding: 4px;
+}
