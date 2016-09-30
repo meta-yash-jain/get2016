@@ -23,21 +23,21 @@ public class EmployeeDAO implements EmployeeDAOInterface {
 	public List<EmployeeVO> getAllEmployees() {
 		List<EmployeeVO> employeeList = new ArrayList<EmployeeVO>();
 		String query = "SELECT `id`, `firstName`, `lastName`, `email`, `address` FROM `customers`";
-		PreparedStatement st;
+		PreparedStatement preparedStatement;
 		try {
-			st = connection.prepareStatement(query);
-			ResultSet resultset = st.executeQuery();
+			preparedStatement = connection.prepareStatement(query);
+			ResultSet resultSet = preparedStatement.executeQuery();
 
 			// add all the data to list of EmployeeList
-			while (resultset.next()) {
-				EmployeeVO employeevo = new EmployeeVO();
-				employeevo.setId(resultset.getInt(id));
-				employeevo.setFirstName(resultset.getString(firstName));
-				employeevo.setLastName(resultset.getString(lastName));
-				employeevo.setEmail(resultset.getString(email));
-				employeevo.setAddress(resultset.getString(address));
+			while (resultSet.next()) {
+				EmployeeVO employeeVO = new EmployeeVO();
+				employeeVO.setId(resultSet.getInt(id));
+				employeeVO.setFirstName(resultSet.getString(firstName));
+				employeeVO.setLastName(resultSet.getString(lastName));
+				employeeVO.setEmail(resultSet.getString(email));
+				employeeVO.setAddress(resultSet.getString(address));
 
-				employeeList.add(employeevo);
+				employeeList.add(employeeVO);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -62,9 +62,9 @@ public class EmployeeDAO implements EmployeeDAOInterface {
 			
 			preparedStatement.executeUpdate();
 
-			ResultSet rs = preparedStatement.getGeneratedKeys();
-			if (rs.next()) {
-				last_inserted_id = rs.getInt(1);
+			ResultSet resultSet = preparedStatement.getGeneratedKeys();
+			if (resultSet.next()) {
+				last_inserted_id = resultSet.getInt(1);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -78,8 +78,7 @@ public class EmployeeDAO implements EmployeeDAOInterface {
 		boolean status = false;
 		String query = "DELETE FROM `customers` WHERE  id= ?";
 		try {
-			PreparedStatement preparedStatement = connection
-					.prepareStatement(query);
+			PreparedStatement preparedStatement = connection.prepareStatement(query);
 			preparedStatement.setInt(1, id);
 			deletedRows = preparedStatement.executeUpdate();
 
@@ -127,21 +126,21 @@ public class EmployeeDAO implements EmployeeDAOInterface {
 		List<EmployeeVO> employeeList = new ArrayList<EmployeeVO>();
 		String query = "SELECT `id`, `firstName`, `lastName`, `email`, `address` FROM `customers` WHERE `id`=" + empid;
 		Connection connection = ConnectionFactory.getConnection();
-		PreparedStatement st;
+		PreparedStatement preparedStatement;
 		try {
-			st = connection.prepareStatement(query);
-			ResultSet resultset = st.executeQuery();
+			preparedStatement = connection.prepareStatement(query);
+			ResultSet resultSet = preparedStatement.executeQuery();
 
 			// add all the data to list of EmployeeList
-			while (resultset.next()) {
-				EmployeeVO employeevo = new EmployeeVO();
-				employeevo.setId(resultset.getInt(id));
-				employeevo.setFirstName(resultset.getString(firstName));
-				employeevo.setLastName(resultset.getString(lastName));
-				employeevo.setEmail(resultset.getString(email));
-				employeevo.setAddress(resultset.getString(address));
+			while (resultSet.next()) {
+				EmployeeVO employeeVO = new EmployeeVO();
+				employeeVO.setId(resultSet.getInt(id));
+				employeeVO.setFirstName(resultSet.getString(firstName));
+				employeeVO.setLastName(resultSet.getString(lastName));
+				employeeVO.setEmail(resultSet.getString(email));
+				employeeVO.setAddress(resultSet.getString(address));
 
-				employeeList.add(employeevo);
+				employeeList.add(employeeVO);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -153,22 +152,22 @@ public class EmployeeDAO implements EmployeeDAOInterface {
 		List<EmployeeVO> employeeList = new ArrayList<EmployeeVO>();
 		String query = "SELECT `id`, `firstName`, `lastName`, `email`, `address` FROM `customers` WHERE `firstName`= ?" ;
 		Connection connection = ConnectionFactory.getConnection();
-		PreparedStatement st;
+		PreparedStatement preparedStatement;
 		try {
-			st = connection.prepareStatement(query);
-			st.setString(1, name);
-			ResultSet resultset = st.executeQuery();
+			preparedStatement = connection.prepareStatement(query);
+			preparedStatement.setString(1, name);
+			ResultSet resultSet = preparedStatement.executeQuery();
 
 			// add all the data to list of EmployeeList
-			while (resultset.next()) {
-				EmployeeVO employeevo = new EmployeeVO();
-				employeevo.setId(resultset.getInt(id));
-				employeevo.setFirstName(resultset.getString(firstName));
-				employeevo.setLastName(resultset.getString(lastName));
-				employeevo.setEmail(resultset.getString(email));
-				employeevo.setAddress(resultset.getString(address));
+			while (resultSet.next()) {
+				EmployeeVO employeeVO = new EmployeeVO();
+				employeeVO.setId(resultSet.getInt(id));
+				employeeVO.setFirstName(resultSet.getString(firstName));
+				employeeVO.setLastName(resultSet.getString(lastName));
+				employeeVO.setEmail(resultSet.getString(email));
+				employeeVO.setAddress(resultSet.getString(address));
 
-				employeeList.add(employeevo);
+				employeeList.add(employeeVO);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
