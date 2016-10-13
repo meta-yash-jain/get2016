@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html ng-app="MyApp">
+<head>
+<meta charset="utf-8">
+<title>My HTML App</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/application.css" charset="utf-8">
+</head>
+<body ng-controller="customerListControl">
+	<div class="container-fluid">
+		<header class="navbar navbar-inverse">
+			<div class="container">
+				<h3 class="text-danger">{{message}}</h3>
+			</div>
+		</header>
+		<div class="container">
+			<h1>Cars</h1>
+			<div class="row">
+				<div class="col-sm-7">
+					<div class="navbar">
+						<ul class="nav navbar-nav">
+							<li ng-click="changeView($event)"><a id="grid"><span
+									class="glyphicon glyphicon-th-large"></span> Grid View</a></li>
+							<li ng-click="changeView($event)"><a id="list"><span
+									class="glyphicon glyphicon-th-list"></span> List View</a></li>
+							<li data-toggle="modal" data-target="#addModal"><a><span
+									class="glyphicon glyphicon-plus"></span> Add Car</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-sm-5 width_adjust">
+					<div class="form-inline">
+						<div class="form-group navbar-right">
+							<label for="filter" class="form-control-label">Filter :</label> <input
+								type='text' class='form-control' id="filterText"
+								ng-model="filterbox">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3"
+					ng-repeat="car in cars.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage)) | filter : filterbox">
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<span class="label" ng-click="editDetails(((currentPage-1)*itemsPerPage)+$index)"
+								data-toggle="modal" data-target="#editModal">{{car.model}}</span>
+							<button class="close" ng-click="deleteDetails(((currentPage-1)*itemsPerPage)+$index)">&times;</button>
+						</div>
+						<div class="panel-body" ng-click="editDetails(((currentPage-1)*itemsPerPage)+$index)"
+							data-toggle="modal" data-target="#editModal">
+							<div class="row">
+								<div class="col-xs-6">
+									<img class="img-responsive" src="img/BMW-2-series.jpg"
+										alt="{{car.imageUrl}}" />
+								</div>
+								<div class="col-xs-6">
+									<p>{{car.make}}</p>
+									<p class="light-blue-text">Price : {{car.price}} $</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<div>
+						<ul uib-pagination total-items="totalItems" ng-model="currentPage"
+							max-size="maxSize" class="pagination-sm" boundary-links="true"
+							num-pages="numPages" items-per-page="itemsPerPage" ng-click =showCardNumber()></ul>
+						<h5>Showing
+							{{(currentPage-1)*itemsPerPage+1}}-{{maxCard}}
+							of {{totalItems}} total cars</h5>
+					</div>
+				</div>
+			</div>
+			<!--Modal -->
+			<div id="editModal" class="modal fade" role="dialog">
+				<div class="modal-dialog">
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title">Edit Car</h4>
+						</div>
+						<div class="modal-body">
+							<div class="row">
+								<form>
+									<div class="form-group">
+										<div class="col-xs-4">
+											<label class="control-label"> Make : </label>
+										</div>
+										<div class="col-xs-8">
+											<input type="text" class="form-control" name="carMake"
+												ng-model="editedItem.make" />
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-xs-4">
+											<label class="control-label"> Model : </label>
+										</div>
+										<div class="col-xs-8">
+											<input type="text" class="form-control" name="carModel"
+												ng-model="editedItem.model" />
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-xs-4">
+											<label class="control-label"> engineInCC : </label>
+										</div>
+										<div class="col-xs-8">
+											<input type="text" class="form-control" name="carEngineInCC"
+												ng-model="editedItem.engineInCC" />
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-xs-4">
+											<label class="control-label"> fuelCapacity : </label>
+										</div>
+										<div class="col-xs-8">
+											<input type="text" class="form-control"
+												name="carFuelCapacity" ng-model="editedItem.fuelCapacity" />
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-xs-4">
+											<label class="control-label"> milage : </label>
+										</div>
+										<div class="col-xs-8">
+											<input type="text" class="form-control" name="carMilage"
+												ng-model="editedItem.milage" />
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-xs-4">
+											<label class="control-label"> Price : </label>
+										</div>
+										<div class="col-xs-8">
+											<input type="text" class="form-control" name="carPrice"
+												ng-model="editedItem.price" />
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default"
+								ng-click="updateDetails()" data-dismiss="modal">Update</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--Modal -->
+			<div id="addModal" class="modal fade" role="dialog">
+				<div class="modal-dialog">
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title">Add Car</h4>
+						</div>
+						<div class="modal-body">
+							<div class="row">
+								<form>
+									<div class="form-group">
+										<div class="col-xs-4">
+											<label class="control-label"> Make : </label>
+										</div>
+										<div class="col-xs-8">
+											<input type="text" class="form-control" name="carMake"
+												ng-model="addItem.make" />
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-xs-4">
+											<label class="control-label"> Model : </label>
+										</div>
+										<div class="col-xs-8">
+											<input type="text" class="form-control" name="carModel"
+												ng-model="addItem.model" />
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-xs-4">
+											<label class="control-label"> engineInCC : </label>
+										</div>
+										<div class="col-xs-8">
+											<input type="text" class="form-control" name="carEngineInCC"
+												ng-model="addItem.engineInCC" />
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-xs-4">
+											<label class="control-label"> fuelCapacity : </label>
+										</div>
+										<div class="col-xs-8">
+											<input type="text" class="form-control"
+												name="carFuelCapacity" ng-model="addItem.fuelCapacity" />
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-xs-4">
+											<label class="control-label"> milage : </label>
+										</div>
+										<div class="col-xs-8">
+											<input type="text" class="form-control" name="carMilage"
+												ng-model="addItem.milage" />
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-xs-4">
+											<label class="control-label"> Price : </label>
+										</div>
+										<div class="col-xs-8">
+											<input type="text" class="form-control" name="carPrice"
+												ng-model="addItem.price" />
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default"
+								data-dismiss="modal" ng-click="addDetails()">Add</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js"></script>
+	<script src="js/ui-bootstrap-tpls-2.1.4.min.js" charset="utf-8"></script>
+	<script src="js/application.js" charset="utf-8"></script>
+</body>
+</html>

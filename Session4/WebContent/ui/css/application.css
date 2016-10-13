@@ -1,0 +1,13 @@
+.light-blue-text{
+  color:#5f54f1;
+}
+
+@media (min-width: 768px){
+.col-sm-5.width_adjust{
+  width: 40.4%;
+}
+}
+
+.panel{
+	height:220px;
+}

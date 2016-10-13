@@ -1,0 +1,56 @@
+<p>
+{{"cars"}}
+</p>
+
+<table>
+  <tr>
+    <th>
+        Make
+    </th>
+    <th>
+        Engine
+    </th>
+    <th>
+        Model
+    </th>
+    <th>
+        Fuel Tank
+    </th>
+    <th>
+        Milage
+    </th>
+    <th>
+        price
+    </th>
+  </tr>
+
+  <tr ng-repeat="car in cars">
+    <td>
+        {{car.make}}
+    </td>
+    <td>
+        {{car.engineInCC}}
+    </td>
+    <td>
+        {{car.model}}
+    </td>
+    <td>
+        {{car.fuelCapacity}}
+    </td>
+    <td>
+      {{car.milage}}
+    </td>
+    <td>
+      {{car.price}}
+
+    </td>
+    <td>
+    <a href="{{'#detail'+car.id}}"> View or Edit</a>
+
+    </td>
+    <td>
+    <a href="{{'#delete'+car.id}}"> Delete</a>
+
+    </td>
+  </tr>
+</table>

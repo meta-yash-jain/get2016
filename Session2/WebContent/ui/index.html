@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app='MyApp'>
+<head>
+<meta charset="ISO-8859-1">
+<title>{{'Insert title here'}}</title>
+<link rel="stylesheet" type="text/css" href="css/site.index.css">
+
+</head>
+
+<body>
+	<button type="button" ng-click="">Add Car</button>
+   <!-- MAIN CONTENT AND INJECTED VIEWS -->
+   <div id="main">
+       {{ message }}
+       <!-- angular templating -->
+       <!-- this is where content will be injected -->
+       <div ng-view></div>
+   </div>
+
+<script src="js/jquery-3.0.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

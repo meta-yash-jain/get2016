@@ -1,0 +1,58 @@
+
+<div ng-controller="loadCarsbyId">
+
+<form id="updateForm"  >
+					<input type="hidden" name="id" ng-model="mycar.id" >
+				<div>
+					<label> Company Name</label>
+					<input type='text' name='make' ng-model="mycar.make" placeholder='Company Name'/>
+				</div>
+	 			<div>
+					<label> Model Number  </label>
+					<input type='text' name='model' ng-model='mycar.model'  placeholder='Model Number'/>
+				</div>
+				<div>
+					<label> Engine CC </label>
+					<input type="number" name='engineInCC' ng-model='mycar.engineInCC'  placeholder='Engine cc' />
+				</div>
+				<div>
+					<label> Fuel Capacity (in Litres) </label>
+					<input type='number' name='fuelCapacity' ng-model='mycar.fuelCapacity' placeholder='Fuel Capacity'/>
+				</div>
+				<div>
+					<label> Milage  </label>
+					<input type='number'  name='milage' ng-model='mycar.milage' placeholder='Milage'/>
+				</div>
+				<div>
+					<label> Price </label>
+					<input type='number' name='price' ng-model="mycar.price" placeholder='Price'/>
+				</div>
+				<div>
+					<label> Road Tax </label>
+					<input type='number' name='roadTax' ng-model="mycar.roadTax" placeholder='Road Tax' />
+				</div>
+
+				<div>
+					<label> AC cost </label>
+					<input type="number" name='ac' ng-model="mycar.ac" placeholder='cost' />
+				</div>
+
+				<div>
+					<label> PowerSteering cost </label>
+					<input type="number" name='powerSteering' ng-model="mycar.powerSteering" placeholder='powerSteering' />
+				</div>
+
+				<div>
+					<label> AccessoryKit cost </label>
+					<input type="number" name='accessoryKit' ng-model="mycar.accessoryKit" placeholder='accessoryKit' />
+				</div>
+
+
+				<div>
+					<button id='updateButton' ng-click="updateData()"  > <h4 id='buttontext'> Update  <i class="fa fa-paper-plane" aria-hidden="true"></i> </h4>  </button>
+				</div>
+				<P>
+					{{responsemessage}}
+				</P>
+			</form>
+		</div>
